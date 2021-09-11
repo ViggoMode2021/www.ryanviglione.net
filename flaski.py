@@ -4,7 +4,8 @@ from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///friends.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://username:Colombia29!@localhost/db_name'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:Colombia29!@localhost/our_users'
 
 def create_app():
     db.init_app(app)
@@ -20,11 +21,14 @@ db = SQLAlchemy(app)
 class Friends(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(200), nullable=False)
-    data_created = db.Column(db.DateTime, default = datetime.utcnow)
+    date_created = db.Column(db.DateTime, default = datetime.utcnow)
 #Create a function to return string
     def __repr__(self):
         return '<Name %r>' % self.id
 subscribers = []
+
+db.create_all()
+db.session.commit()
 
 @app.route('/')
 def index():

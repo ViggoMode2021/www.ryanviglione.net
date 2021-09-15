@@ -1,11 +1,11 @@
-from flask import Flask, render_template, request
-import smtplib
+from flask import Flask, render_template, request, redirect
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://username:Colombia29!@localhost/db_name'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:Colombia29!@localhost/our_users'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///users.sqlite3'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
 
 def create_app():
     db.init_app(app)
@@ -19,12 +19,22 @@ db = SQLAlchemy(app)
 
 #Create db model
 class Friends(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(200), nullable=False)
+    _id = db.Column("id", db.Integer, primary_key=True)
+    first_name = db.Column(db.String(200), nullable=False)
+    last = db.Column(db.String(200), nullable=False)
+    email = db.Column(db.String(200), nullable=False)
     date_created = db.Column(db.DateTime, default = datetime.utcnow)
+
+    def __init__(self, first_name, last, email, date_created):
+        self.first_name = first_name
+        self.last = last
+        self.email = email
+        self.date_created = date_created
+
 #Create a function to return string
-    def __repr__(self):
-        return '<Name %r>' % self.id
+    #def __repr__(self):
+        #return '<Name %r>' % self.id
+
 subscribers = []
 
 db.create_all()
@@ -38,19 +48,48 @@ def index():
 @app.route('/about')
 def about():
     title = 'Sobre Ryan Viglione'
-    names = ['Vida', 'Trabajo', 'Pasatiempos', 'Enlaces']
-    return render_template("about.html", names = names, title= title)
+    attributes = ['Vida', 'Trabajo', 'Pasatiempos', 'Enlaces']
+    return render_template("about.html", attributes = attributes, title= title)
 
 @app.route('/subscribe')
 def subscribe():
     title_two = 'Puedes subscribirte ahora.'
     return render_template('subscribe.html', title=title_two)
 
-@app.route('/form', methods = ["POST"])
+@app.route('/practice_Spanish')
+def practice_Spanish():
+    title_four = 'Practice Spanish here.'
+    return render_template('practice_Spanish.html', title=title_four)
+
+@app.route('/practice_Spanish', methods = ["POST"])
+def form_two():
+    respuesta = request.form.get("respuesta")
+    if request.form.get == "hola":
+        print('wow')
+
+@app.route('/form', methods = ["POST", "GET"])
 def form():
+    '''
     first_name = request.form.get("first_name")
     last_name = request.form.get("last_name")
     email = request.form.get("email")
+    '''
+    if request.method == "POST":
+        friend_name = request.form['first_name', 'last_name', 'email']
+        new_friend = Friends(name=friend_name)
+
+        try:
+            db.session.add(new_friend)
+            db.session.commit()
+            return redirect ('/subscribe')
+
+        except:
+            return "Error"
+
+    else:
+        friends = Friends.query.order_by(Friends.date_created)
+        return render_template("subscribe.html")
+
     '''
     message = "You have been subscribed to my email newsletter"
     server = smtplib.SMTP("smtp.gmail.com", 587)
@@ -73,6 +112,7 @@ def music():
     return render_template('music.html', title=title_four)
 
 if __name__ == "__main__":
+    db.create_all()
     app.run(debug=True)
 
 #####################################RESERVES###############################################

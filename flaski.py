@@ -67,6 +67,20 @@ def form_two():
     if request.form.get == "hola":
         print('wow')
 
+#Dropdowns
+@app.route('/adjetivos')
+def adjetivos():
+    title_dropdown_1 = 'Sobre Ryan Viglione'
+    attributes = ['Vida', 'Trabajo', 'Pasatiempos', 'Enlaces']
+    return render_template("adjetivos.html", attributes = attributes, title= title_dropdown_1)
+
+@app.route('/sustantivos')
+def sustantivos():
+    title_dropdown_2 = 'Sobre Ryan Viglione'
+    attributes = ['Vida', 'Trabajo', 'Pasatiempos', 'Enlaces']
+    return render_template("sustantivos.html", attributes = attributes, title= title_dropdown_2)
+
+
 @app.route('/form', methods = ["POST", "GET"])
 def form():
     '''

@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% block title %}{{title}}{% endblock %}
+
+{% block content %}
+
+
+<html lang="en">
+  <head>
+ <style>
+    body
+    {
+     background-image:url("/static/images/Notebook.jpg");
+     background-attachment: fixed;
+     }
+</style>
+  </head>
+
+
+    </div class= "container">
+      <h1>Practice Spanish</h1>
+       </ol>
+      <p>
+          <body>
+        <form action="/practice_Spanish" method="POST">
+  <div class="form-group">
+     <input type="text" class="form-control" id="exampleInputText1" aria-describedby="" placeholder="escribe en el espacio"
+     name ='repuesta'>
+  </div>
+
+         </body>
+
+        </ol>
+
+          <br/><br/>
+
+          <br/><br/>
+                <body>
+          <h1></h1>
+          <p> </p>
+        </body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <div class="dropdown">
+    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Verbos (verbs)
+    <span class="caret"></span></button>
+    <ul class="dropdown-menu">
+      <li><a href="{{ url_for('adjetivos')}}"">Adjetivos (adjectives)</a></li>
+      <li><a href="{{ url_for('sustantivos')}}">Sustantivos (nouns)</a></li>
+      <li><a href="{{ url_for('Cultura y geografía')}}">Cultura y geografía (culture and geography)</a></li>
+      <li class="divider"></li>
+      <li><a href="{{ url_for('Misceláneo')}}">Misceláneo (miscellaneous)</a></li>
+    </ul>
+  </div>
+</div>
+
+</body>
+</html>
+
+
+{% endblock %}
+

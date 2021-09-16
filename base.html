@@ -8,6 +8,12 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity=
+            "sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+          crossorigin="anonymous">
+
+    <link rel="stylesheet" href="C:\Users\ryans\PycharmProjects\flaskarooni\static\css\style.css">
+
     <title>
       {% if title %}
         {{ title }}
@@ -17,7 +23,7 @@
     </title>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">R Viglione</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -29,12 +35,18 @@
           <a class="nav-link active" aria-current="page" href="/">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="/about">About</a>
+          <a class="nav-link" aria-current="page" href="/about">Links</a>
           </li>
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="{{ url_for('subscribe')}}">Subscribe</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{{ url_for('music')}}">Music</a>
+          </li>
           </a>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{{ url_for('practice_Spanish')}}">Practice Spanish</a>
+          </li>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="#">Action</a></li>
             <li><a class="dropdown-item" href="#">Another action</a></li>

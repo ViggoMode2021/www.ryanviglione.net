@@ -47,9 +47,8 @@ def index():
 
 @app.route('/about')
 def about():
-    title = 'Sobre Ryan Viglione'
-    attributes = ['Vida', 'Trabajo', 'Pasatiempos', 'Enlaces']
-    return render_template("about.html", attributes = attributes, title= title)
+    title = "Links to Ryan's other websites"
+    return render_template("about.html", title= title)
 
 @app.route('/subscribe')
 def subscribe():
@@ -80,10 +79,22 @@ def sustantivos():
     attributes = ['Vida', 'Trabajo', 'Pasatiempos', 'Enlaces']
     return render_template("sustantivos.html", attributes = attributes, title= title_dropdown_2)
 
+@app.route('/Cultura')
+def Cultura():
+    title_dropdown_3 = 'Sobre Ryan Viglione'
+    attributes = ['Vida', 'Trabajo', 'Pasatiempos', 'Enlaces']
+    return render_template("Cultura.html", attributes = attributes, title= title_dropdown_3)
 
-@app.route('/form', methods = ["POST", "GET"])
+@app.route('/Misceláneo')
+def Misceláneo():
+    title_dropdown_4 = 'Sobre Ryan Viglione'
+    attributes = ['Vida', 'Trabajo', 'Pasatiempos', 'Enlaces']
+    return render_template("misceláneo.html", attributes = attributes, title= title_dropdown_4)
+
+
+@app.route('/form', methods = ["POST"])
 def form():
-    '''
+
     first_name = request.form.get("first_name")
     last_name = request.form.get("last_name")
     email = request.form.get("email")
@@ -104,7 +115,6 @@ def form():
         friends = Friends.query.order_by(Friends.date_created)
         return render_template("subscribe.html")
 
-    '''
     message = "You have been subscribed to my email newsletter"
     server = smtplib.SMTP("smtp.gmail.com", 587)
     server.starttls()

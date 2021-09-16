@@ -1,29 +1,18 @@
 {% extends 'base.html' %}
 {% block content %}
-    </div class= "container">
-      <h1>Sobre Ryan Vig</h1>
-       </ol>
-      <p>
-        {% for name in names %}
 
-               {% if name == 'Trabajo' %}
-                 <li>Ryan es el mejor.<li>
-               {% else %}
-                 <li>{{ name }}<li>
-               {% endif %}
+<html lang="en">
+  <head>
+    <style>
+      body
+      {
+      background-image:url({{url_for('static', filename='images/Medallo.jpg')}})
+      }
+    </style>
+  </head>
 
-        {% endfor %}
-        </ol>
+</html>
 
-          <img src="static/images/Branford.jfif" width="300">
-          <br/><br/>
-
-          <br/><br/>
-                <body>
-          <h1>Mi vida</h1>
-          <p>Hola, me llamo Ryan Viglione. I created this website by myself with tutorials from Codemy.com. Made with
-          Python and Flask. </p>
-        </body>
 
 {% endblock %}
 

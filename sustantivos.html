@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% block title %}{{title}}{% endblock %}
 {% block content %}
 
 <html lang="en">
@@ -6,9 +7,34 @@
     <style>
       body
       {
-      background-image:url({{url_for('static', filename='images/Medallo.jpg')}})
+      background-image:url({{url_for('static', filename='images/Buenos Aires.jpg')}})
       }
+
     </style>
   </head>
 
 </html>
+
+<a href='https://www.sporcle.com/games/ryansviglione/days-of-the-week-los-das-de-la-semana'><button type="button" class="btn btn-primary">Days of the week game</button>
+
+<a href='https://www.sporcle.com/games/ryansviglione/la-ropa-los-colores-los-materiales-los-nmeros'><button type="button" class="btn btn-secondary">Colors, clothes, materials game</button>
+
+  <a href='https://www.sporcle.com/games/ryansviglione/comotepreparasvocabulary'><button type="button" class="btn btn-success">Hygiene products vocabulary game</button>
+
+    <a href='https://www.sporcle.com/games/ryansviglione/saludos-y-despedidas-greetings-and-farewells'><button type="button" class="btn btn-danger">Greetings and farewells game</button>
+
+          <br/><br/>
+
+      <a href='https://www.sporcle.com/games/ryansviglione/numbers'><button type="button" class="btn btn-warning">Numbers game</button>
+
+          <a href='https://www.sporcle.com/games/ryansviglione/spanish-question-words-palabras-interrogativas-1'><button type="button" class="btn btn-info">Question words game</button>
+
+              <a href='https://www.sporcle.com/games/ryansviglione/la-comida-el-desayuno-y-el-almuerzo'><button type="button" class="btn btn-success">Breakfast and lunch game</button>
+
+          <br/><br/>
+
+          <br/><br/>
+
+
+
+{% endblock %}

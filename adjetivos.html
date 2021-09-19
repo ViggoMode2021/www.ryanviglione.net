@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% block title %}{{title}}{% endblock %}
 {% block content %}
 
 <html lang="en">
@@ -6,15 +7,18 @@
     <style>
       body
       {
-      background-image:url({{url_for('static', filename='images/Xochimilco.jpg')}})
+      background-image:url({{url_for('static', filename='images/Openbook.jpg')}})
       }
     </style>
   </head>
 
-<a href='https://www.sporcle.com/games/ryansviglione/los-adjetivos-fsicos'><button type="button" class="btn btn-primary">Physical adjectives game</button>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/LroO1T5SBec" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-  <a href='https://www.sporcle.com/games/ryansviglione/los-adjetivos-de-la-personalidad'><button type="button" class="btn btn-secondary">Physical adjectives game</button>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/QPvmmKXQAhs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/tCNjkavz67w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/gJhdlB4pMgw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </html>
 
 {% endblock %}

@@ -3,8 +3,8 @@ from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///users.sqlite3'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite3'
 
 
 def create_app():
@@ -16,13 +16,15 @@ def create_app():
 
 #Initialize the db
 db = SQLAlchemy(app)
+db.init_app(app)
+
 
 #Create db model
-class Friends(db.Model):
-    _id = db.Column("id", db.Integer, primary_key=True)
-    first_name = db.Column(db.String(200), nullable=False)
-    last = db.Column(db.String(200), nullable=False)
-    email = db.Column(db.String(200), nullable=False)
+class User(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    first_name = db.Column(db.String(50))
+    last = db.Column(db.String(50))
+    email = db.Column(db.String(50))
     date_created = db.Column(db.DateTime, default = datetime.utcnow)
 
     def __init__(self, first_name, last, email, date_created):

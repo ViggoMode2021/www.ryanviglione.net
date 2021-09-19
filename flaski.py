@@ -42,7 +42,7 @@ db.session.commit()
 
 @app.route('/')
 def index():
-    title = 'Ryan Vig blog'
+    title = "Ryan Viglione's website"
     return render_template('index.html', title=title)
 
 @app.route('/about')
@@ -52,44 +52,35 @@ def about():
 
 @app.route('/subscribe')
 def subscribe():
-    title_two = 'Puedes subscribirte ahora.'
+    title_two = 'Puedes subscribirte ahora'
     return render_template('subscribe.html', title=title_two)
 
 @app.route('/practice_Spanish')
 def practice_Spanish():
-    title_four = 'Practice Spanish here.'
+    title_four = 'Practice Spanish here'
     return render_template('practice_Spanish.html', title=title_four)
-
-@app.route('/practice_Spanish', methods = ["POST"])
-def form_two():
-    respuesta = request.form.get("respuesta")
-    if request.form.get == "hola":
-        print('wow')
 
 #Dropdowns
 @app.route('/adjetivos')
 def adjetivos():
-    title_dropdown_1 = 'Sobre Ryan Viglione'
-    attributes = ['Vida', 'Trabajo', 'Pasatiempos', 'Enlaces']
-    return render_template("adjetivos.html", attributes = attributes, title= title_dropdown_1)
+    title_dropdown_1 = 'Adjetivos/adjectives'
+    return render_template("adjetivos.html", title= title_dropdown_1)
 
 @app.route('/sustantivos')
 def sustantivos():
-    title_dropdown_2 = 'Sobre Ryan Viglione'
-    attributes = ['Vida', 'Trabajo', 'Pasatiempos', 'Enlaces']
-    return render_template("sustantivos.html", attributes = attributes, title= title_dropdown_2)
+    title_dropdown_2 = 'Sustantivos/nouns'
+    return render_template("sustantivos.html", title= title_dropdown_2)
 
 @app.route('/Cultura')
 def Cultura():
-    title_dropdown_3 = 'Sobre Ryan Viglione'
-    attributes = ['Vida', 'Trabajo', 'Pasatiempos', 'Enlaces']
-    return render_template("Cultura.html", attributes = attributes, title= title_dropdown_3)
+    title_dropdown_3 = 'Cultura/culture'
+    return render_template("Cultura.html", title= title_dropdown_3)
 
-@app.route('/Misceláneo')
-def Misceláneo():
-    title_dropdown_4 = 'Sobre Ryan Viglione'
-    attributes = ['Vida', 'Trabajo', 'Pasatiempos', 'Enlaces']
-    return render_template("misceláneo.html", attributes = attributes, title= title_dropdown_4)
+@app.route('/verbos')
+def verbos():
+    title_dropdown_5 = 'Verbos/verbs'
+    return render_template("verbos.html", title= title_dropdown_5)
+
 
 
 @app.route('/form', methods = ["POST"])

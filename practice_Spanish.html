@@ -1,46 +1,73 @@
 {% extends 'base.html' %}
+{% block title %}{{title}}{% endblock %}
+
 {% block content %}
+
+
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <link rel="stylesheet" href="static/css/style3.css">
 
-  </div class= "container">
-   <h1><center>Links to some of my social media: </center></h1>
-   </ol>
 
+    </div class= "container">
+      <h1><center>Practice Spanish</center></h1>
+       </ol>
+      <p>
+          <body>
 
-<html lang="en">
+          <html lang="en">
   <head>
-    <style>
-      body
-      {
-      background-image:url({{url_for('static', filename='images/Medallo.jpg')}})
-      }
-    </style>
+ <style>
+    body
+    {
+     background-image:url("/static/images/Notebook.jpg");
+     background-attachment: fixed;
+     }
+</style>
   </head>
 
-<div class="col align-self-start">
-      <a href="https://github.com/ViggoMode2021">
-         <img src="static/images/GitHub.jpg" width="150">
-       </a>
-    </div>
+    <center>
+  <div class="container">
+  <div class="dropdown text-center">
+  <div class="dropdown btn-group">
+    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Select a topic
+    <span class="caret"></span></button>
+    <ul class="dropdown-menu">
+        <li><a href="{{ url_for('verbos')}}"">Verbos (verbs)</a></li>
+      <li><a href="{{ url_for('adjetivos')}}"">Adjetivos (adjectives)</a></li>
+      <li><a href="{{ url_for('sustantivos')}}">Sustantivos (nouns)</a></li>
+      <li><a href="{{ url_for('Cultura')}}">Cultura y geografía (culture and geography)</a></li>
+    </ul>
+  </div>
+</div>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
 
         <br/><br/>
 
-    <div class="col align-self-center">
-      <a href="https://www.linkedin.com/in/ryan-viglione-6602628a/">
-         <img src="static/images/Linkedin.png" width="150">
-       </a>
-    </div>
 
-      <br/><br/>
+        <br/><br/>
 
-      <div class="col align-self-center">
-      <a href="https://www.teacherspayteachers.com/Store/Ryans-Spanish-Resources">
-         <img src="static/images/TPT.png" width="150">
-       </a>
-    </div>
+
+        <br/><br/>
+
+
+        <br/><br/>
+
+
+
+<h4>Please click the drop down menu above in order to navigate to the page that contains the topic you desire. From there, you will find
+buttons that will link you to resources that I created to help practice your Spanish!</h4>
+
 
 </html>
 

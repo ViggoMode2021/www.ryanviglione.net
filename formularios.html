@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block title %}{{title}}{% endblock %}
+{% block content %}
+
+<html lang="en">
+  <head>
+    <style>
+      body
+      {
+      background-image:url({{url_for('static', filename='images/Buenos Aires.jpg')}})
+      }
+
+    </style>
+  </head>
+
+
+    <br/><br/>
+
+    <form action="/form_dos" method="POST">
+  <div class="form-group">
+     <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="one"
+     name ='one' style="width: 200px;">
+  </div>
+
+  <div class="form-group">
+    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="two"
+     name ='two' style="width: 200px;">
+  </div>
+
+  <div class="form-group">
+     <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="three"
+     name ='three' style="width: 200px;">
+  </div>
+
+
+  <button type="submit" class="btn btn-secondary">Submit</button>
+
+</form>
+
+</html>
+
+
+
+
+{% endblock %}

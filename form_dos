@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block title %}{{title}}{% endblock %}
+
+{% block content %}
+ {% if one == "uno" and two == "dos" and three == "tres" %}
+        <div>You got a perfect score</div>
+    {% else %}
+        {{ super() }}
+    {% endif %}
+
+    <div class= "container">
+        <h1>{{ title_perfect }}</h1>
+            <small>Here are your answers</small>
+        <body>
+             <p>{{ title_perfect }}</p>
+        </body>
+            <br/><br>
+       <ul>
+        {% for answer in answers %}
+           <li>{{ answer }}</li>
+       </ul>
+        {% endfor %}
+    <div>
+{% endblock %}

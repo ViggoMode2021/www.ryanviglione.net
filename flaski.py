@@ -1,24 +1,24 @@
 from flask import Flask, render_template, request, redirect
-from flask_sqlalchemy import SQLAlchemy
-from datetime import datetime
+#from flask_sqlalchemy import SQLAlchemy
+#from datetime import datetime
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite3'
 
 
-def create_app():
-    db.init_app(app)
-    with app.app_context():
-        db.create_all()
+#def create_app():
+    #db.init_app(app)
+    #with app.app_context():
+        #db.create_all()
 
-    return app
-
+    #return app
+'''
 #Initialize the db
 db = SQLAlchemy(app)
 db.init_app(app)
-
-
+'''
+'''
 #Create db model
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -32,16 +32,16 @@ class User(db.Model):
         self.last = last
         self.email = email
         self.date_created = date_created
-
+'''
 #Create a function to return string
     #def __repr__(self):
         #return '<Name %r>' % self.id
 
 subscribers = []
-
+'''
 db.create_all()
 db.session.commit()
-
+'''
 @app.route('/')
 def index():
     title = "Ryan Viglione's website"
@@ -83,6 +83,11 @@ def verbos():
     title_dropdown_5 = 'Verbos/verbs'
     return render_template("verbos.html", title= title_dropdown_5)
 
+@app.route('/formularios')
+def formularios():
+    title_dropdown_5 = 'Formularios/forms'
+    return render_template("formularios.html", title= title_dropdown_5)
+
 
 
 @app.route('/form', methods = ["POST"])
@@ -123,13 +128,40 @@ def form():
     title_three = 'Muchas gracias.'
     return render_template('form.html', title=title_three, subscribers=subscribers)
 
+answers = []
+
+@app.route('/form_dos', methods = ["POST", "GET"])
+def form_dos():
+
+    one = request.form.get("one")
+    two = request.form.get("two")
+    three = request.form.get("three")
+
+    title_perfect = "You got a perfect score!"
+
+    if not one or not two or not three:
+        error_statement = "All form fields are required"
+        return render_template('fail.html', error_statement = error_statement,
+                               one = one, two = two, three = three)
+
+
+    if one == "uno" and two == "dos" and three == "tres":
+        title_perfect
+        print('yah it worked')
+    else:
+        return
+
+
+    answers.append(f"'one' is {one}'two is' {two}'three is' {three}")
+    title_perfect_score = 'You got a perfect score!'
+    return render_template('form_dos.html', title=title_perfect_score, answers=answers)
+
 @app.route('/music')
 def music():
     title_four = 'Escuche gratis.'
     return render_template('music.html', title=title_four)
 
 if __name__ == "__main__":
-    db.create_all()
     app.run(debug=True)
 
 #####################################RESERVES###############################################

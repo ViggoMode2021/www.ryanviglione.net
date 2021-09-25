@@ -128,6 +128,7 @@ def form():
     title_three = 'Muchas gracias.'
     return render_template('form.html', title=title_three, subscribers=subscribers)
 
+global answers
 answers = []
 
 @app.route('/form_dos', methods = ["POST", "GET"])
@@ -137,8 +138,6 @@ def form_dos():
     two = request.form.get("two")
     three = request.form.get("three")
 
-    title_perfect = "You got a perfect score!"
-
     if not one or not two or not three:
         error_statement = "All form fields are required"
         return render_template('fail.html', error_statement = error_statement,
@@ -146,15 +145,22 @@ def form_dos():
 
 
     if one == "uno" and two == "dos" and three == "tres":
-        title_perfect
-        print('yah it worked')
+        return render_template('perfect_score.html')
     else:
-        return
+        answers.append(f"'one' is {one}'two is' {two}'three is' {three}")
+        return render_template('form_dos.html', answers=answers)
 
+@app.route('/perfect_score', methods = ["POST", "GET"])
+def perfect_score():
+    title_perfect = "You got a perfect score!"
+    return render_template('perfect_score.html', title = title_perfect, answers=answers)
+
+    one = request.form.get("one")
+    two = request.form.get("two")
+    three = request.form.get("three")
 
     answers.append(f"'one' is {one}'two is' {two}'three is' {three}")
-    title_perfect_score = 'You got a perfect score!'
-    return render_template('form_dos.html', title=title_perfect_score, answers=answers)
+    return answers
 
 @app.route('/music')
 def music():

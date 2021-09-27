@@ -38,10 +38,26 @@
       <li><a href="{{ url_for('adjetivos')}}"">Adjetivos (adjectives)</a></li>
       <li><a href="{{ url_for('sustantivos')}}">Sustantivos (nouns)</a></li>
       <li><a href="{{ url_for('Cultura')}}">Cultura y geografía (culture and geography)</a></li>
+
     </ul>
   </div>
 </div>
 
+      <div class="container">
+  <div class="dropdown text-left">
+  <div class="dropdown btn-group">
+    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Select a topic
+    <span class="caret"></span></button>
+    <ul class="dropdown-menu">
+        <li><a href="{{ url_for('formularios')}}">problemas de números (number problems)</a></li>
+      <li><a href="{{ url_for('problemas_de_verbos')}}"">problemas de verbos (verb problems)</a></li>
+      <li><a href="{{ url_for('sustantivos')}}">Sustantivos (nouns)</a></li>
+      <li><a href="{{ url_for('Cultura')}}">Cultura y geografía (culture and geography)</a></li>
+        <li><a href="{{ url_for('formularios')}}">formulario de números (number form)</a></li>
+
+    </ul>
+  </div>
+</div>
 
 <!DOCTYPE html>
 <html>

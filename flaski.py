@@ -137,17 +137,18 @@ def form_dos():
     one = request.form.get("one")
     two = request.form.get("two")
     three = request.form.get("three")
+    four = request.form.get("four")
 
-    if not one or not two or not three:
+    if not one or not two or not three or not four:
         error_statement = "All form fields are required"
         return render_template('fail.html', error_statement = error_statement,
-                               one = one, two = two, three = three)
+                               one = one, two = two, three = three, four = four)
 
 
-    if one == "uno" and two == "dos" and three == "tres":
+    if one == "uno" and two == "dos" and three == "tres" and four == "cuatro":
         return render_template('perfect_score.html')
     else:
-        answers.append(f"'one' is {one}'two is' {two}'three is' {three}")
+        answers.append(f"'one' is {one}'two is' {two}'three is' {three} 'four is {four}")
         return render_template('form_dos.html', answers=answers)
 
 @app.route('/perfect_score', methods = ["POST", "GET"])
@@ -158,8 +159,9 @@ def perfect_score():
     one = request.form.get("one")
     two = request.form.get("two")
     three = request.form.get("three")
+    four = request.form.get("four")
 
-    answers.append(f"'one' is {one}'two is' {two}'three is' {three}")
+    answers.append(f"'one' is {one}'two is' {two}'three is' {three} 'four is' {four}")
     return answers
 
 @app.route('/music')
@@ -167,13 +169,10 @@ def music():
     title_four = 'Escuche gratis.'
     return render_template('music.html', title=title_four)
 
+@app.route('/problemas_de_verbos')
+def problemas_de_verbos():
+    title_four = 'Escuche gratis.'
+    return render_template('problemas_de_verbos.html', title=title_four)
+
 if __name__ == "__main__":
     app.run(debug=True)
-
-#####################################RESERVES###############################################
-
-#first_name = first_name, last_name= last_name, email = email
-    '''
- <img src="static/images/SoundCloud.png" width="300">
-        <a href="https://www.qries.com/">
-    '''

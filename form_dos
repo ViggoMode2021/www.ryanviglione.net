@@ -2,22 +2,21 @@
 {% block title %}{{title}}{% endblock %}
 
 {% block content %}
- {% if one == "uno" and two == "dos" and three == "tres" %}
-        <div>You got a perfect score</div>
-    {% else %}
-        {{ super() }}
-    {% endif %}
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="static/css/style_form_dos.css">
 
     <div class= "container">
-        <h1>{{ title_perfect }}</h1>
-            <small>Here are your answers</small>
-        <body>
-             <p>{{ title_perfect }}</p>
-        </body>
-            <br/><br>
+        <h1>Here are the correct answers: </h1>
+                    <br/><br/>
+         <h2>One is 'uno', two is 'dos', three is 'tres', four is 'cuatro'.</h2>
+                    <br/><br/>
        <ul>
+       <h3>Here were your answers: </h3>
+               <br/><br/>
         {% for answer in answers %}
-           <li>{{ answer }}</li>
+           <h4>{{ answer }}</h4>
        </ul>
         {% endfor %}
     <div>

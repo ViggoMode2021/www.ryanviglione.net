@@ -171,8 +171,26 @@ def music():
 
 @app.route('/problemas_de_verbos')
 def problemas_de_verbos():
-    title_four = 'Escuche gratis.'
-    return render_template('problemas_de_verbos.html', title=title_four)
+    title_vbs = 'Listen to the recordings and write the English or Spanish translation on the line.'
+    return render_template('problemas_de_verbos.html', title=title_vbs)
 
+@app.route('/form_tres')
+def form_tres():
+
+    vb_one = request.form.get("vb_one")
+    if vb_one == "yo hablo":
+        return render_template('perfect_score.html')
+    else:
+        answers.append(f"'one' is {one}'two is' {two}'three is' {three} 'four is {four}")
+        return render_template('form_dos.html', answers=answers)
+
+    '''
+    if not vb_one:
+        error_statement = "All form fields are required"
+        return render_template('fail.html', error_statement = error_statement,
+                               vb_one = vb_one)
+    else:
+        return render_template('perfect_score.html')
+    '''
 if __name__ == "__main__":
     app.run(debug=True)

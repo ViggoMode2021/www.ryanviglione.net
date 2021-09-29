@@ -3,18 +3,36 @@
 
 {% block content %}
 
-    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-    <link rel="stylesheet" href="static/css/style_perfect_score.css">
+    <link rel="stylesheet" href="static/css/style_hablo.css">
 
-    <div class= "container">
-          <h1>You got a perfect score!</h1>
-        <h2>Here are the correct answers: </h2>
-            <br/><br/>
-         <h2>One is 'uno', two is 'dos', three is 'tres', four is 'four'.</h2>
-            <br/><br/>
-          <h3>Here were your answers: </h3>
-            <br/><br/>
-           <h3>One is 'uno', two is 'dos', three is 'tres', four is 'four'.</h3>
-    <div>
+<html lang="en">
+  <head>
+    <style>
+      body
+      {
+      background-image:url({{url_for('static', filename='images/Bolivia.jpg')}})
+      }
+    </style>
+  </head>
+
+  <h1>Here were your answers alongside the answer key:</h1>
+
+    <br/><br/>
+
+
+<audio controls>
+    <source src="\static\hablo.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
+
+   <br/><br/>
+
+      <form action="/form_tres" method="POST">
+  <div class="form-group">
+     <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder=" 'Yo hablo' is the correct answer (and yours). It means 'I talk'."
+     name ='vb_one' style="width: 200px;">
+  </div>
+
+
 {% endblock %}

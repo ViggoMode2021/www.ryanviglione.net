@@ -174,23 +174,24 @@ def problemas_de_verbos():
     title_vbs = 'Listen to the recordings and write the English or Spanish translation on the line.'
     return render_template('problemas_de_verbos.html', title=title_vbs)
 
-@app.route('/form_tres')
+global verb_answers
+verb_answers = []
+
+@app.route('/form_tres', methods = ["POST", "GET"])
 def form_tres():
 
     vb_one = request.form.get("vb_one")
     if vb_one == "yo hablo":
-        return render_template('perfect_score.html')
+        return render_template('perfect_score_dos.html')
     else:
-        answers.append(f"'one' is {one}'two is' {two}'three is' {three} 'four is {four}")
-        return render_template('form_dos.html', answers=answers)
+        return render_template('form_tres.html', answers=verb_answers)
 
-    '''
-    if not vb_one:
-        error_statement = "All form fields are required"
-        return render_template('fail.html', error_statement = error_statement,
-                               vb_one = vb_one)
-    else:
-        return render_template('perfect_score.html')
-    '''
+
+@app.route('/perfect_score_dos', methods = ["POST", "GET"])
+def perfect_score_dos():
+    title_perfect = "You got a perfect score!"
+    return render_template('perfect_score_dos.html', title = title_perfect, answers=verb_answers)
+
+
 if __name__ == "__main__":
     app.run(debug=True)

@@ -184,8 +184,8 @@ def form_tres():
     if vb_one == "yo hablo":
         return render_template('perfect_score_dos.html')
     else:
-        return render_template('form_tres.html', answers=verb_answers)
-
+        verb_answers.append(f"Your #1 was: {vb_one}, your #2 was ")
+        return render_template('form_tres.html', verb_answers=verb_answers)
 
 @app.route('/perfect_score_dos', methods = ["POST", "GET"])
 def perfect_score_dos():

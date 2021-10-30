@@ -1,24 +1,23 @@
 from flask import Flask, render_template, request, redirect
-#from flask_sqlalchemy import SQLAlchemy
-#from datetime import datetime
+from flask_sqlalchemy import SQLAlchemy
+from datetime import datetime
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite3'
 
 
-#def create_app():
-    #db.init_app(app)
-    #with app.app_context():
-        #db.create_all()
+def create_app():
+    db.init_app(app)
+    with app.app_context():
+        db.create_all()
 
-    #return app
-'''
+    return app
+
 #Initialize the db
 db = SQLAlchemy(app)
 db.init_app(app)
-'''
-'''
+
 #Create db model
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -32,16 +31,16 @@ class User(db.Model):
         self.last = last
         self.email = email
         self.date_created = date_created
-'''
+
 #Create a function to return string
-    #def __repr__(self):
-        #return '<Name %r>' % self.id
+    def __repr__(self):
+        return '<Name %r>' % self.id
 
 subscribers = []
-'''
+
 db.create_all()
 db.session.commit()
-'''
+
 @app.route('/')
 def index():
     title = "Ryan Viglione's website"
@@ -87,7 +86,6 @@ def verbos():
 def formularios():
     title_dropdown_5 = 'Formularios/forms'
     return render_template("formularios.html", title= title_dropdown_5)
-
 
 
 @app.route('/form', methods = ["POST"])
@@ -138,17 +136,18 @@ def form_dos():
     two = request.form.get("two")
     three = request.form.get("three")
     four = request.form.get("four")
+    five = request.form.get("five")
 
-    if not one or not two or not three or not four:
+    if not one or not two or not three or not four or not five:
         error_statement = "All form fields are required"
-        return render_template('fail.html', error_statement = error_statement,
-                               one = one, two = two, three = three, four = four)
+        return render_template('fail_numbers.html', error_statement = error_statement,
+                               one = one, two = two, three = three, four = four, five = five)
 
 
-    if one == "uno" and two == "dos" and three == "tres" and four == "cuatro":
+    if one == "uno" and two == "dos" and three == "tres" and four == "cuatro" and five == "cinco":
         return render_template('perfect_score.html')
     else:
-        answers.append(f"'one' is {one}'two is' {two}'three is' {three} 'four is {four}")
+        answers.append(f"'one is' {one} 'two is' {two}'three is' {three} 'four is' {four} 'five is' {five}")
         return render_template('form_dos.html', answers=answers)
 
 @app.route('/perfect_score', methods = ["POST", "GET"])
@@ -160,8 +159,9 @@ def perfect_score():
     two = request.form.get("two")
     three = request.form.get("three")
     four = request.form.get("four")
+    five = request.form.get("five")
 
-    answers.append(f"'one' is {one}'two is' {two}'three is' {three} 'four is' {four}")
+    answers.append(f"'one' is {one}'two is' {two}'three is' {three} 'four is' {four} 'five is' {five}")
     return answers
 
 @app.route('/music')
@@ -180,17 +180,20 @@ verb_answers = []
 @app.route('/form_tres', methods = ["POST", "GET"])
 def form_tres():
 
-    vb_one = request.form.get("vb_one")
-    if vb_one == "yo hablo":
-        return render_template('perfect_score_dos.html')
+    vb_one_1 = request.form.get("vb_one")
+    vb_two_2 = request.form.get("vb_two")
+    vb_three_3 = request.form.get("vb_three")
+
+    if vb_one_1 == "yo hablo" and vb_two_2 == 'tu cantas' and vb_three_3 == 'nosotros leemos':
+        return render_template('perfect_score_dos.html', verb_answers = verb_answers)
     else:
-        verb_answers.append(f"Your #1 was: {vb_one}, your #2 was ")
+        verb_answers.append(f"Your #1 was: {vb_one_1}, your #2 was")
         return render_template('form_tres.html', verb_answers=verb_answers)
 
 @app.route('/perfect_score_dos', methods = ["POST", "GET"])
 def perfect_score_dos():
     title_perfect = "You got a perfect score!"
-    return render_template('perfect_score_dos.html', title = title_perfect, answers=verb_answers)
+    return render_template('perfect_score_dos.html', title = title_perfect, verb_answers=verb_answers)
 
 
 if __name__ == "__main__":

@@ -1,26 +1,33 @@
 h1{
     color: black;
-    font-size: 75px;
-
-
+    font-size: 55px;
 }
 
 h2{
     color: green;
     font-size: 45px;
-
-
 }
 
 h3{
     color: red;
     font-size: 45px;
-
-
 }
 
+h5{
+    color: green;
+    font-size: 35px;
+}
+
+h6{
+    color: red;
+    font-size: 35px;
+}
 
 body{
     background: yellow;
+}
 
+hr.rounded {
+  border-top: 8px solid #bbb;
+  border-radius: 5px;
 }

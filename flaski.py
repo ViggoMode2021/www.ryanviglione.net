@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, redirect
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
+from random import choice
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
@@ -60,6 +61,21 @@ def subscribe():
 def practice_Spanish():
     title_four = 'Practice Spanish here'
     return render_template('practice_Spanish.html', title=title_four)
+
+#MadLibs funcationality and logic
+@app.route('/greet')
+def greet_person():
+    player = request.args.get("person")
+
+    AWESOMENESS = [
+        'asombroso/asombrosa', 'increíble', 'especial', 'genial', 'inteligente', 'agradable', 'una persona excelente',
+        'muy importante']
+
+    compliment = choice(AWESOMENESS)
+
+    return render_template("cumplido.html", person=player, compliment=compliment)
+
+#End MadLibs functionality and logic
 
 #Dropdowns
 @app.route('/adjetivos')

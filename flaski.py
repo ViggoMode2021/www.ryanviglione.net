@@ -7,7 +7,6 @@ app = Flask(__name__)
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite3'
 
-
 def create_app():
     db.init_app(app)
     with app.app_context():
@@ -102,6 +101,10 @@ def verbos():
 def formularios():
     title_dropdown_5 = 'Formularios/forms'
     return render_template("formularios.html", title= title_dropdown_5)
+
+@app.route('/llenar_los_espacios')
+def llenar_los_espacios():
+    return render_template("llenar_los_espacios.html")
 
 
 @app.route('/form', methods = ["POST"])
@@ -200,7 +203,7 @@ def form_tres():
     vb_two_2 = request.form.get("vb_two")
     vb_three_3 = request.form.get("vb_three")
 
-    if vb_one_1 == "yo hablo" and vb_two_2 == 'tu cantas' and vb_three_3 == 'nosotros leemos':
+    if vb_one_1 == "Today is Tuesday the second of November." and vb_two_2 == "It is 7:00 at night." and vb_three_3 == "":
         return render_template('perfect_score_dos.html', verb_answers = verb_answers)
     else:
         verb_answers.append(f"Your #1 was: {vb_one_1}, your #2 was")
@@ -210,7 +213,6 @@ def form_tres():
 def perfect_score_dos():
     title_perfect = "You got a perfect score!"
     return render_template('perfect_score_dos.html', title = title_perfect, verb_answers=verb_answers)
-
 
 if __name__ == "__main__":
     app.run(debug=True)

@@ -203,10 +203,10 @@ def form_tres():
     vb_two_2 = request.form.get("vb_two")
     vb_three_3 = request.form.get("vb_three")
 
-    if vb_one_1 == "Today is Tuesday the second of November." and vb_two_2 == "It is 7:00 at night." and vb_three_3 == "":
+    if vb_one_1 == "Today is Tuesday the second of November." and vb_two_2 == "It is 7:00 at night." and vb_three_3 == "I like to use the computer.":
         return render_template('perfect_score_dos.html', verb_answers = verb_answers)
     else:
-        verb_answers.append(f"Your #1 was: {vb_one_1}, your #2 was")
+        verb_answers.append(f"#1. {vb_one_1}   #2.     {vb_two_2}        #3.{vb_three_3}.")
         return render_template('form_tres.html', verb_answers=verb_answers)
 
 @app.route('/perfect_score_dos', methods = ["POST", "GET"])

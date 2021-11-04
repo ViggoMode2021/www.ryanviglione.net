@@ -102,9 +102,29 @@ def formularios():
     title_dropdown_5 = 'Formularios/forms'
     return render_template("formularios.html", title= title_dropdown_5)
 
-@app.route('/llenar_los_espacios')
+@app.route('/llenar_los_espacios', methods = ["POST", "GET"])
 def llenar_los_espacios():
     return render_template("llenar_los_espacios.html")
+
+global verb_answers_dos
+verb_answers_dos = []
+
+@app.route('/perfect_score_tres', methods = ["POST", "GET"])
+def perfect_score_tres():
+    title_perfect = "You got a perfect score!"
+    return render_template('perfect_score_tres.html', title = title_perfect, verb_answers_dos =verb_answers_dos)
+
+    ser = request.form.get("ser")
+    ir = request.form.get("ir")
+    estudiar = request.form.get("estudiar")
+    hablar = request.form.get("hablar")
+    leer = request.form.get("leer")
+
+    if ser == "es" and ir == "voy" and estudiar == "estudiamos" and hablar == "habla" and leer == "leen":
+        return render_template('perfect_score_tres.html', verb_answers_dos=verb_answers_dos)
+    else:
+        return render_template('form_cuatro.html', verb_answers_dos=verb_answers_dos)
+
 
 
 @app.route('/form', methods = ["POST"])
@@ -209,10 +229,6 @@ def form_tres():
         verb_answers.append(f"#1. {vb_one_1}   #2.     {vb_two_2}        #3.{vb_three_3}.")
         return render_template('form_tres.html', verb_answers=verb_answers)
 
-@app.route('/perfect_score_dos', methods = ["POST", "GET"])
-def perfect_score_dos():
-    title_perfect = "You got a perfect score!"
-    return render_template('perfect_score_dos.html', title = title_perfect, verb_answers=verb_answers)
 
 if __name__ == "__main__":
     app.run(debug=True)

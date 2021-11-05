@@ -106,26 +106,6 @@ def formularios():
 def llenar_los_espacios():
     return render_template("llenar_los_espacios.html")
 
-global verb_answers_dos
-verb_answers_dos = []
-
-@app.route('/perfect_score_tres', methods = ["POST", "GET"])
-def perfect_score_tres():
-    title_perfect = "You got a perfect score!"
-    return render_template('perfect_score_tres.html', title = title_perfect, verb_answers_dos =verb_answers_dos)
-
-    ser = request.form.get("ser")
-    ir = request.form.get("ir")
-    estudiar = request.form.get("estudiar")
-    hablar = request.form.get("hablar")
-    leer = request.form.get("leer")
-
-    if ser == "es" and ir == "voy" and estudiar == "estudiamos" and hablar == "habla" and leer == "leen":
-        return render_template('perfect_score_tres.html', verb_answers_dos=verb_answers_dos)
-    else:
-        return render_template('form_cuatro.html', verb_answers_dos=verb_answers_dos)
-
-
 
 @app.route('/form', methods = ["POST"])
 def form():
@@ -229,6 +209,25 @@ def form_tres():
         verb_answers.append(f"#1. {vb_one_1}   #2.     {vb_two_2}        #3.{vb_three_3}.")
         return render_template('form_tres.html', verb_answers=verb_answers)
 
+global verb_answers_dos
+verb_answers_dos = []
+
+@app.route('/form_cuatro', methods = ["POST", "GET"])
+def form_cuatro():
+
+    ser = request.form.get("ser")
+    ir = request.form.get("ir")
+    estudiar = request.form.get("estudiar")
+    hablar = request.form.get("hablar")
+    leer = request.form.get("leer")
+
+    if ser == "es" and ir == "voy" and estudiar == "estudiamos" and hablar == "habla" and leer == "leen":
+        return render_template('perfect_score_tres.html', verb_answers_dos=verb_answers_dos)
+    else:
+        verb_answers_dos.append(f"#1. #1 is {ser}   #2.     {ir}        #3.{estudiar}.")
+        return render_template('form_cuatro.html', verb_answers_dos=verb_answers_dos)
+
+#Below is the if __name__ == "__main__": statement (Dunder)
 
 if __name__ == "__main__":
     app.run(debug=True)

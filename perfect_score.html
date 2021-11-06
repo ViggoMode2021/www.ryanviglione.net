@@ -7,13 +7,24 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <link rel="stylesheet" href="static/css/style_perfect_score.css">
 
+
+<html lang="en">
+  <head>
+    <style>
+      body
+      {
+      background-image:url({{url_for('static', filename='images/gradient_2.jpg')}})
+      }
+    </style>
+  </head>
+
     <div class= "container">
-          <h1>You got a perfect score! ¡Felicidades!</h1>
+          <h1>You got a perfect score! ¡Felicidades! &#128175</h1>
           <hr class="rounded">
         <h2>Here is the answer key: </h2>
             <br/><br/>
          <h5>One is 'uno', two is 'dos', three is 'tres', four is 'cuatro', five is 'cinco'.</h5>
-            <br/><br/>
+        <hr class="rounded">
           <h3>Here were your answers: </h3>
             <br/><br/>
            <h6>One is 'uno', two is 'dos', three is 'tres', four is 'cuatro', five is 'cinco'.</h6>

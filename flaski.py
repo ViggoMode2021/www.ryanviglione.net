@@ -224,7 +224,7 @@ def form_cuatro():
     if ser == "es" and ir == "voy" and estudiar == "estudiamos" and hablar == "habla" and leer == "leen":
         return render_template('perfect_score_tres.html', verb_answers_dos=verb_answers_dos)
     else:
-        verb_answers_dos.append(f"#1. #1 is {ser}   #2.     {ir}        #3.{estudiar}.")
+        verb_answers_dos.append(f"# #1 was '{ser}' --  #2. was '{ir}'   --     #3. was '{estudiar}'   #4. was  '{hablar}'  --    #5 was '{leer}'     ")
         return render_template('form_cuatro.html', verb_answers_dos=verb_answers_dos)
 
 #Below is the if __name__ == "__main__": statement (Dunder)

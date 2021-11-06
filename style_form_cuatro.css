@@ -1,0 +1,23 @@
+h1{
+   font-family: "Apple Chancery", cursive;
+   color: yellow;
+}
+
+h2{
+    color: pink;
+    font-size: 40px;
+    font-family: "Luminari", fantasy;
+}
+
+h3{
+    color: red;
+    font-size: 40px;
+    font-family: "Luminari", fantasy;
+}
+
+h4{
+    color: blue;
+    font-size: 35px;
+    font-family: "FreeMono", monospace;
+    background: black;
+}

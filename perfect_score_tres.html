@@ -1,32 +1,34 @@
-{% extends 'base.html' %}
-{% block title %}{{title_perfect}}{% endblock %}
 
-{% block content %}
+h1{
+   font-family: "Apple Chancery", cursive;
+}
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-    <link rel="stylesheet" href="static/css/style_perfect_score_tres.css">
+h2{
+    color: pink;
+    font-size: 40px;
+    font-family: "Luminari", fantasy;
+}
 
-<html lang="en">
-  <head>
-    <style>
-      body
-      {
-      background-image:url({{url_for('static', filename='images/gradient_2.jpg')}})
-      }
-    </style>
-  </head>
+h3{
+    color: red;
+    font-size: 40px;
+    font-family: "Luminari", fantasy;
+}
 
-    <div class= "container">
-          <h1>You got a perfect score! ¡Felicidades! &#128175</h1>
-          <hr class="rounded">
-        <h2>Here is the answer key: </h2>
-            <br/><br/>
-         <h5>#1 is 'es', #2 is 'voy', #3 is 'estudiamos', #4 is 'habla', #5 is 'leen'.</h5>
-                <hr class="rounded">
-        <h2>Here were your answers: </h2>
-        <br/><br/>
-        <h6>#1 is 'es', #2 is 'voy', #3 is 'estudiamos', #4 is 'habla', #5 is 'leen'.</h6>
+h5{
+    color: green;
+    font-size: 35px;
+    font-family: "FreeMono", monospace;
+}
 
+h6{
+    color: red;
+    font-size: 35px;
+    font-family: "FreeMono", monospace;
 
-{% endblock %}
+}
+
+hr.rounded {
+  border-top: 8px solid #bbb;
+  border-radius: 5px;
+}

@@ -166,7 +166,7 @@ def form_dos():
     if one == "uno" and two == "dos" and three == "tres" and four == "cuatro" and five == "cinco":
         return render_template('perfect_score.html')
     else:
-        answers.append(f"'one is' {one} 'two is' {two}'three is' {three} 'four is' {four} 'five is' {five}")
+        answers.append(f" One was '{one}', Two was '{two}', Three was '{three}', Four was '{four}', Five was '{five}'.")
         return render_template('form_dos.html', answers=answers)
 
 @app.route('/perfect_score', methods = ["POST", "GET"])

@@ -56,7 +56,6 @@ def downloadable_files():
     title_files = "Links to Ryan's other websites"
     return render_template("downloadable_files.html", title= title_files)
 
-
 @app.route('/subscribe')
 def subscribe():
     title_two = 'Puedes subscribirte ahora'

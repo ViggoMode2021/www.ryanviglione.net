@@ -3,41 +3,78 @@
 
 {% block content %}
     <div class= "container">
-        <h1 style="text-align:center;">Escuche gratis</h1>
+        <h1 style="text-align:center;">¡Escuche gratis!</h1>
+        <h2>&#x1F3A7;</h2>
+
 
     </div>
 
-    <br/><br/>
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <link rel="stylesheet" href="static/css/style2.css">
 
+    <br/><br/>
+
    <br/><br/>
 
   </div class= "container">
-  <h2>Sobre sus canciones</h2>
+  <h2>¡Haz clic abajo en las fotos para ir a escuchar!</h2>
    </ol>
 
 <div class="container">
   <div class="row">
     <div class="col align-self-start">
-      SoundCloud <a href="https://soundcloud.com/fortnightpenpal">
+        <h3>My/Mi SoundCloud</h3> <a href="https://soundcloud.com/fortnightpenpal">
          <img src="static/images/SoundCloud.jpg" width="300">
-        <body>
       </a>
     </div>
     <div class="col align-self-center">
-      Bandcamp <a href="https://ryanviglione.bandcamp.com/">
+     <h5>My/Mi Bandcamp</h5><a href="https://ryanviglione.bandcamp.com/">
          <img src="static/images/Bandcamp.jpg" width="300">
-        <body>
       </a>
     </div>
     <div class="col align-self-end">
-      YouTube <a href="https://www.youtube.com/channel/UCUrpv2Zc0hvj9eMOvHS6kvw">
+      <h6>My/Mi YouTube</h6> <a href="https://www.youtube.com/channel/UCUrpv2Zc0hvj9eMOvHS6kvw">
          <img src="static/images/YouTube.png" width="300">
+      </a>
     </div>
   </div>
 </div>
+
+<html>
+    <head>
+        <title>Music Player</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div id="container">
+            <div id="player-container">
+                <div><i class="fa fa-close" ></i></div>
+                <div><i class="fa fa-expand"></i></div>
+                <div class="artist-name"><p id="artist-name">Kanye West - My Beautiful Dark Twisted Fantasy</p></div>
+                <div id="controls">
+                    <i id="back-button" class="fa fa-backward"></i>
+                    <i id="play-button" class="fa fa-pause"></i>
+                    <i id="forward-button" class="fa fa-forward" ></i>
+                </div>
+                <div class="play-bar">
+                    <div><p>0:32</p></div>
+                    <div id="bar-top"><div id="bar-btm"></div></div>
+                    <div><p>3:32</p></div>
+                </div>
+                <div><i class="fa fa-sliders"></i></div>
+                <div><i class="fa fa-volume-up"></i></div>
+            </div>
+        </div>
+    </body>
+</html>
+
+<script type = "text/javascript" src = "static/js/music_player.js">
+
 
 {% endblock %}

@@ -73,7 +73,7 @@ def greet_person():
 
     AWESOMENESS = [
         'asombroso/asombrosa', 'increíble', 'especial', 'genial', 'inteligente', 'agradable', 'una persona excelente',
-        'muy importante']
+        'muy importante', 'fantástico/fantástica', 'chido/chida', 'bueno/buena', 'interesante']
 
     compliment = choice(AWESOMENESS)
 

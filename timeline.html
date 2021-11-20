@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+      <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="static/css/style_timeline.css">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #474e5d;
+  font-family: Helvetica, sans-serif;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+
+/* Container around content */
+.container {
+  padding: 10px 40px;
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+}
+
+/* The circles on the timeline */
+.container::after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: -17px;
+  background-color: white;
+  border: 4px solid #FF9F55;
+  top: 15px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* Place the container to the left */
+.left {
+  left: 0;
+}
+
+/* Place the container to the right */
+.right {
+  left: 50%;
+}
+
+/* Add arrows to the left container (pointing right) */
+.left::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  right: 30px;
+  border: medium solid white;
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent white;
+}
+
+/* Add arrows to the right container (pointing left) */
+.right::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  left: 30px;
+  border: medium solid white;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent white transparent transparent;
+}
+
+/* Fix the circle for containers on the right side */
+.right::after {
+  left: -16px;
+}
+
+/* The actual content */
+.content {
+  padding: 20px 30px;
+  background-color: white;
+  position: relative;
+  border-radius: 6px;
+}
+
+/* Media queries - Responsive timeline on screens less than 600px wide */
+@media screen and (max-width: 600px) {
+  /* Place the timelime to the left */
+  .timeline::after {
+  left: 31px;
+  }
+
+  /* Full-width containers */
+  .container {
+  width: 100%;
+  padding-left: 70px;
+  padding-right: 25px;
+  }
+
+  /* Make sure that all arrows are pointing leftwards */
+  .container::before {
+  left: 60px;
+  border: medium solid white;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent white transparent transparent;
+  }
+
+  /* Make sure all circles are at the same spot */
+  .left::after, .right::after {
+  left: 15px;
+  }
+
+  /* Make all right containers behave like the left ones */
+  .right {
+  left: 0%;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="timeline">
+  <div class="container left">
+    <div class="content">
+      <h2>2021</h2>
+      <p>In June 2021, I started learning Python by watching YouTube videos. I moved to the TKinter series by Codemy.com. I started building this Flask website in September 2021. In November 2021, I will begin the Python, PostgreSQL, and Devops backend bootcamp by Nucamp! My dream job is to move into Edtech and develop software for language learners.</p>
+    </div>
+  </div>
+  <div class="container right">
+    <div class="content">
+      <h2>2018</h2>
+      <p>May 2018 is when I returned home (after making a quick pit stop in Mexico City) from a year of living and teaching English in Medellín, Colombia. In August 2018, I started teaching Spanish 1 and 2 at Belchertown High School. Here is where I believe I changed the most as an educator. I began to create detail oriented YouTube videos, songs, and even a RPG Maker game (all of which are linked on this site) to help make my classes as dynamic as possible. During my second year, I accepted the position as Class of 2023 advisor alongside a colleague. 🧳</p>
+    </div>
+  </div>
+  <div class="container left">
+    <div class="content">
+      <h2>2017</h2>
+      <p>June 2017 is when I left teaching Spanish at NRHS and moved to Medellín, Colombia to co-teach English at Institución Educativa Kennedy. My time in Colombia changed my life and solidified my desire to continue traveling and one day become an expat. I made so many lifelong friends and learned so much during this year. ✈️</p>
+    </div>
+  </div>
+  <div class="container right">
+    <div class="content">
+      <h2>2015</h2>
+      <p>In May 2015, I graduated cum laude from Salem State University with a Bachelor's degree in Spanish and Secondary Education. A month later, I accepted a position to teach Spanish 2, 3 Honors, and 4 Honors at Narragansett Regional High School. This school is where I officially began my teaching career. The students and staff were overall super accepting and supportive, which helped me settle in well to my post university life. This isn't to say that there weren't challenges, but I learned how to adapt to new frontiers and challenges. 👨‍🎓🎉📝</p>
+    </div>
+  </div>
+  <div class="container left">
+    <div class="content">
+      <h2>2010 - 2014</h2>
+      <p>I graduated from Branford High School in June 2010 and began my undergrad at Salem State University in August 2010. During this summer, I traveled abroad for the first time with my friend, Steve, to Cuenca Ecuador. Steve is originally from there and is one of the reasons I decided to pursue learning Spanish. I could finally use the Spanish that I learned in school outside of the classroom with him and his family. Ecuador certainly captivated me to study abroad in college and finally led me to pick Buenos Aires, Argentina as my next destination in 2013. The cultural experiences from these places, coupled with the typical college experience were vital to my independence and ability to hone my talents and address my areas of improvement. 📚📙📖 </p>
+    </div>
+  </div>
+  <div class="container right">
+    <div class="content">
+      <h2>1991 - 2010</h2>
+      <p>I was born on December 10, 1991 in New Haven, Connecticut. Most of my life was spent in the nearby town of Branford, CT. I was a very shy kid who eventually found his niche of skateboarding and later, music. Skateboarding was a lifestyle for me and my friends, which was later rivaled by playing music. These two things were what I spent my formative years doing. My parents were very supportive and I am thankful for their patience, especially during my adolescence where my schoolwork took a backseat to my hobbies. Who would've thought I would become a teacher? 😂</p>
+    </div>
+  </div>
+</div>
+
+<h5>Timeline by W3Schools.com</h5>
+
+</body>
+</html>

@@ -43,8 +43,13 @@ db.session.commit()
 
 @app.route('/')
 def index():
-    title = "Ryan Viglione's website"
+    title = "Welcome! - ¡Bienvenidos!"
     return render_template('index.html', title=title)
+
+@app.route('/timeline')
+def timeline():
+    title_timeline = "Timeline of my life!"
+    return render_template("timeline.html", title= title_timeline)
 
 @app.route('/about')
 def about():
@@ -54,7 +59,7 @@ def about():
 @app.route('/downloadable_files')
 def downloadable_files():
     title_files = "Links to Ryan's other websites"
-    return render_template("downloadable_files.html", title= title_files)
+    return render_template("downloadable_files.html", title_files= title_files)
 
 @app.route('/subscribe')
 def subscribe():
@@ -190,7 +195,7 @@ def perfect_score():
 
 @app.route('/music')
 def music():
-    title_four = 'Escuche gratis.'
+    title_four = '¡Escuche música!'
     return render_template('music.html', title=title_four)
 
 @app.route('/problemas_de_verbos')

@@ -2,10 +2,33 @@ h30{
     color: red;
     font-size: 40px;
     font-family: "Lucida Console", "Courier New", monospace;
+    position: absolute;
+    right: 90px;
+    top: 270px;
 }
 
 h31{
-color: black;
-font-size: 40px;
-font-family: "Lucida Console", "Courier New", monospace;
+    color: black;
+    font-size: 40px;
+    font-family: "Lucida Console", "Courier New", monospace;
+    position: absolute;
+    left: 90px;
+}
+
+h32{
+    color: red;
+    font-size: 40px;
+    font-family: "Lucida Console", "Courier New", monospace;
+    position: absolute;
+    left: 90px;
+    text-decoration: underline;
+}
+
+h33{
+    color: black;
+    font-size: 40px;
+    font-family: "Lucida Console", "Courier New", monospace;
+    position: absolute;
+    right: 90px;
+    text-decoration: underline;
 }

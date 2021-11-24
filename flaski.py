@@ -92,7 +92,9 @@ def greet_person():
 def define():
 
     DICTIONARY = {'to talk': 'hablar', 'to eat': 'comer',  'to live': 'vivir', 'to work': 'trabajar', 'to read':
-                  'leer', 'escribir': 'to write', 'bailar': 'to dance', 'cantar': 'to sing', 'to study': 'estudiar'}
+                  'leer', 'escribir': 'to write', 'bailar': 'to dance', 'cantar': 'to sing', 'to study': 'estudiar',
+                  'ir': 'to go', 'jugar': 'to play (a sport or game)', 'tocar': 'to play (an instrument)', 'correr':
+                  'to run'}
 
     word = request.args.get("definition_word")
 

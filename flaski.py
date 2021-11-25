@@ -93,8 +93,9 @@ def define():
 
     DICTIONARY = {'to talk': 'hablar', 'to eat': 'comer',  'to live': 'vivir', 'to work': 'trabajar', 'to read':
                   'leer', 'escribir': 'to write', 'bailar': 'to dance', 'cantar': 'to sing', 'to study': 'estudiar',
-                  'ir': 'to go', 'jugar': 'to play (a sport or game)', 'tocar': 'to play (an instrument)', 'correr':
-                  'to run'}
+                  'to go': 'ir', 'jugar': 'to play (a sport or game)', 'tocar': 'to play (an instrument)', 'to run':
+                  'correr', 'to watch': 'ver/mirar', 'to draw': 'dibujar', 'to swim': 'nadar', 'to drink': 'beber',
+                  'to practice': 'practicar', 'to see': 'ver/mirar', 'to sleep': 'dormir'}
 
     word = request.args.get("definition_word")
 

@@ -105,6 +105,11 @@ def define():
     else:
         return render_template('fail_dictionary.html')
 
+@app.route('/diccionario')
+def diccionario():
+    title_dropdown_6 = 'Diccionario (English to Spanish)'
+    return render_template("diccionario.html", title= title_dropdown_6)
+
 #Dropdowns
 @app.route('/adjetivos')
 def adjetivos():

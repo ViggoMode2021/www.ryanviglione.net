@@ -105,6 +105,24 @@ def define():
     else:
         return render_template('fail_dictionary.html')
 
+#Dictionary funcionality and logic
+@app.route('/definitive_dos')
+def define_dos():
+
+    DICTIONARY_DOS = {'hablar': 'to talk', 'comer': 'to eat',  'vivir': 'to live', 'trabajar': 'to work', 'leer':
+                  'to read', 'escribir': 'to write', 'bailar': 'to dance', 'cantar': 'to sing', 'estudiar': 'to study',
+                  'ir': 'to go', 'jugar': 'to play (a sport or game)', 'tocar': 'to play (an instrument)', 'correr':
+                  'to run', 'ver': 'to watch/see', 'mirar': 'to watch/see', 'dibujar': 'to draw', 'nadar': 'to swim', 'beber': 'to drink',
+                  'practicar': 'to practice', 'dormir': 'to sleep'}
+
+    word_two = request.args.get("definition_word_dos")
+
+    if word_two in DICTIONARY_DOS:
+        meaning_two=DICTIONARY_DOS[word_two]
+        return render_template('definition_two.html', meaning_two = meaning_two, word_two = word_two)
+    else:
+        return render_template('fail_dictionary.html')
+
 @app.route('/diccionario')
 def diccionario():
     title_dropdown_6 = 'Diccionario (English to Spanish)'

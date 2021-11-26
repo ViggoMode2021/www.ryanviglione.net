@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% block title %}{{title}}{% endblock %}
+
+{% block content %}
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="static/css/style_definition.css">
+
+ <style>
+    body
+    {
+     background-image:url("/static/images/Castillo.jpg");
+     background-attachment: fixed;
+     }
+
+</style>
+
+<body>
+
+ <form action="/definitive">
+        <label3>Write the English verb in the box to receive the Spanish verb (i.e. - 'to talk')<input type="text" name="definition_word"></label3>
+        <input type="submit" value="Define">
+    </form>
+
+<br/><br>
+
+ <br/><br>
+
+ <br/><br>
+
+ <br/><br>
+
+ <br/><br>
+
+ <br/><br>
+
+ <br/><br>
+
+ <br/><br>
+
+ <br/><br>
+
+<div class="col align-self-start">
+         <img src="static/images/Vigcionario.jpg" width="150">
+       </a>
+    </div>
+
+
+</body>
+
+      {% endblock %}

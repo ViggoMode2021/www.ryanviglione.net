@@ -32,3 +32,79 @@ h33{
     right: 90px;
     text-decoration: underline;
 }
+
+h34{
+    color: blue;
+    font-size: 30px;
+    font-family: "Gill Sans", "sans-serif", monospace;
+    position: absolute;
+    top: 90%;
+    left: 40%;
+}
+
+label3{
+    color: yellow;
+    font-size: 25px;
+    background-color: black
+}
+
+input[type=submit] {
+      padding: 5px 15px;
+      background: #99e0b2;
+      border: 0 none;
+      cursor: pointer;
+      -webkit-border-radius: 5px;
+      border-radius: 5px;
+}
+
+label4{
+    color: green;
+    font-size: 25px;
+    background-color: black
+}
+
+input[type=submit] {
+      padding: 5px 15px;
+      background: #99e0b2;
+      border: 0 none;
+      cursor: pointer;
+      -webkit-border-radius: 5px;
+      border-radius: 5px;
+}
+
+h40{
+    color: red;
+    font-size: 40px;
+    font-family: "Lucida Console", "Courier New", monospace;
+    position: absolute;
+    right: 90px;
+    top: 270px;
+    left: 90px;
+}
+
+h41{
+    color: black;
+    font-size: 40px;
+    font-family: "Lucida Console", "Courier New", monospace;
+    position: absolute;
+    right: 90px;
+    top: 270px;
+}
+
+h42{
+    color: red;
+    font-size: 40px;
+    font-family: "Lucida Console", "Courier New", monospace;
+    position: absolute;
+    right: 90px;
+    text-decoration: underline;
+}
+
+h43{
+    color: black;
+    font-size: 40px;
+    font-family: "Lucida Console", "Courier New", monospace;
+    position: absolute;
+    left: 90px;
+    text-decoration: underline;
+}

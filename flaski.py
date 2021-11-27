@@ -95,7 +95,7 @@ def define():
                   'leer', 'escribir': 'to write', 'bailar': 'to dance', 'cantar': 'to sing', 'to study': 'estudiar',
                   'to go': 'ir', 'jugar': 'to play (a sport or game)', 'tocar': 'to play (an instrument)', 'to run':
                   'correr', 'to watch': 'ver/mirar', 'to draw': 'dibujar', 'to swim': 'nadar', 'to drink': 'beber',
-                  'to practice': 'practicar', 'to see': 'ver/mirar', 'to sleep': 'dormir'}
+                  'to practice': 'practicar', 'to see': 'ver/mirar', 'to sleep': 'dormir', 'to travel': 'viajar'}
 
     word = request.args.get("definition_word")
 
@@ -113,7 +113,7 @@ def define_dos():
                   'to read', 'escribir': 'to write', 'bailar': 'to dance', 'cantar': 'to sing', 'estudiar': 'to study',
                   'ir': 'to go', 'jugar': 'to play (a sport or game)', 'tocar': 'to play (an instrument)', 'correr':
                   'to run', 'ver': 'to watch/see', 'mirar': 'to watch/see', 'dibujar': 'to draw', 'nadar': 'to swim', 'beber': 'to drink',
-                  'practicar': 'to practice', 'dormir': 'to sleep'}
+                  'practicar': 'to practice', 'dormir': 'to sleep', 'viajar': 'to travel'}
 
     word_two = request.args.get("definition_word_dos")
 

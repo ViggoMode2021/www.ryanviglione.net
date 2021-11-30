@@ -1,3 +1,5 @@
+
+
 h30{
     color: red;
     font-size: 40px;
@@ -5,6 +7,7 @@ h30{
     position: absolute;
     right: 90px;
     top: 270px;
+    font-size: clamp(1rem, 5vw, 1rem);
 }
 
 h31{
@@ -13,6 +16,7 @@ h31{
     font-family: "Lucida Console", "Courier New", monospace;
     position: absolute;
     left: 90px;
+    font-size: clamp(1rem, 5vw, 1rem);
 }
 
 h32{
@@ -22,6 +26,7 @@ h32{
     position: absolute;
     left: 90px;
     text-decoration: underline;
+    font-size: clamp(1rem, 5vw, 1rem);
 }
 
 h33{
@@ -31,6 +36,7 @@ h33{
     position: absolute;
     right: 90px;
     text-decoration: underline;
+    font-size: clamp(1rem, 5vw, 1rem);
 }
 
 h34{
@@ -40,12 +46,14 @@ h34{
     position: absolute;
     top: 90%;
     left: 40%;
+    font-size: clamp(1rem, 5vw, 1rem);
 }
 
 label3{
     color: yellow;
     font-size: 25px;
     background-color: black
+    font-size: clamp(1rem, 5vw, 1rem);
 }
 
 input[type=submit] {
@@ -80,6 +88,7 @@ h40{
     right: 90px;
     top: 270px;
     left: 90px;
+    font-size: clamp(1rem, 5vw, 1rem);
 }
 
 h41{
@@ -89,6 +98,8 @@ h41{
     position: absolute;
     right: 90px;
     top: 270px;
+    font-size: clamp(1rem, 5vw, 1rem);
+
 }
 
 h42{
@@ -98,6 +109,7 @@ h42{
     position: absolute;
     right: 90px;
     text-decoration: underline;
+    font-size: clamp(1rem, 5vw, 1rem);
 }
 
 h43{
@@ -107,4 +119,5 @@ h43{
     position: absolute;
     left: 90px;
     text-decoration: underline;
+    font-size: clamp(1rem, 5vw, 1rem);
 }

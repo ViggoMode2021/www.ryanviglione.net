@@ -1,13 +1,6 @@
 from flask import Flask, render_template, request, redirect
-
+from random import choice
 app = Flask(__name__)
-
-def create_app():
-    db.init_app(app)
-    with app.app_context():
-        db.create_all()
-
-    return app
 
 @app.route('/')
 def index():
@@ -26,12 +19,12 @@ def about():
 
 @app.route('/downloadable_files')
 def downloadable_files():
-    title_files = "Links to Ryan's other websites"
-    return render_template("downloadable_files.html", title_files= title_files)
+    title_download = "Exe files and stramable game"
+    return render_template("downloadable_files.html", title= title_download)
 
 @app.route('/subscribe')
 def subscribe():
-    title_two = 'Puedes subscribirte ahora'
+    title_two = 'Contact/Contacto'
     return render_template('subscribe.html', title=title_two)
 
 @app.route('/practice_Spanish')
@@ -206,8 +199,6 @@ def form_cuatro():
     else:
         verb_answers_dos.append(f"# #1 was '{ser}' --  #2. was '{ir}'   --     #3. was '{estudiar}'   #4. was  '{hablar}'  --    #5 was '{leer}'     ")
         return render_template('form_cuatro.html', verb_answers_dos=verb_answers_dos)
-
-#Below is the if __name__ == "__main__": statement (Dunder)
 
 if __name__ == "__main__":
     app.run(debug=True)

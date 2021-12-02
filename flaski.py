@@ -1,11 +1,6 @@
 from flask import Flask, render_template, request, redirect
-from flask_sqlalchemy import SQLAlchemy
-from datetime import datetime
-from random import choice
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite3'
 
 def create_app():
     db.init_app(app)
@@ -14,38 +9,10 @@ def create_app():
 
     return app
 
-#Initialize the db
-db = SQLAlchemy(app)
-db.init_app(app)
-
-#Create db model
-class User(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    first_name = db.Column(db.String(50))
-    last = db.Column(db.String(50))
-    email = db.Column(db.String(50))
-    date_created = db.Column(db.DateTime, default = datetime.utcnow)
-
-    def __init__(self, first_name, last, email, date_created):
-        self.first_name = first_name
-        self.last = last
-        self.email = email
-        self.date_created = date_created
-
-#Create a function to return string
-    def __repr__(self):
-        return '<Name %r>' % self.id
-
-subscribers = []
-
-db.create_all()
-db.session.commit()
-
 @app.route('/')
 def index():
     title = "Welcome! - ¡Bienvenidos!"
     return render_template('index.html', title=title)
-
 
 @app.route('/timeline')
 def timeline():
@@ -157,45 +124,6 @@ def formularios():
 @app.route('/llenar_los_espacios', methods = ["POST", "GET"])
 def llenar_los_espacios():
     return render_template("llenar_los_espacios.html")
-
-
-@app.route('/form', methods = ["POST"])
-def form():
-
-    first_name = request.form.get("first_name")
-    last_name = request.form.get("last_name")
-    email = request.form.get("email")
-    '''
-    if request.method == "POST":
-        friend_name = request.form['first_name', 'last_name', 'email']
-        new_friend = Friends(name=friend_name)
-
-        try:
-            db.session.add(new_friend)
-            db.session.commit()
-            return redirect ('/subscribe')
-
-        except:
-            return "Error"
-
-    else:
-        friends = Friends.query.order_by(Friends.date_created)
-        return render_template("subscribe.html")
-
-    message = "You have been subscribed to my email newsletter"
-    server = smtplib.SMTP("smtp.gmail.com", 587)
-    server.starttls()
-    server.login("ryansviglione@gmail.com", "")
-    server.sendmail("ryansviglione@gmail.com", email, message)
-    '''
-    if not first_name or not last_name or not email:
-        error_statement = "All form fields are required"
-        return render_template('fail.html', error_statement = error_statement,
-                               first_name = first_name, last_name = last_name, email = email)
-
-    subscribers.append(f"{first_name} {last_name} {email}")
-    title_three = 'Muchas gracias.'
-    return render_template('form.html', title=title_three, subscribers=subscribers)
 
 global answers
 answers = []

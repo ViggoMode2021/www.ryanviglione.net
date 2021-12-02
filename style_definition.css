@@ -1,5 +1,4 @@
 
-
 h30{
     color: red;
     font-size: 40px;
@@ -53,7 +52,6 @@ label3{
     color: yellow;
     font-size: 25px;
     background-color: black
-    font-size: clamp(1rem, 5vw, 1rem);
 }
 
 input[type=submit] {
@@ -111,7 +109,6 @@ h42{
     text-decoration: underline;
     font-size: clamp(1rem, 5vw, 1rem);
 }
-
 h43{
     color: black;
     font-size: 40px;

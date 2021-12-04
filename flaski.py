@@ -161,6 +161,11 @@ def music():
     title_four = '¡Escuche música!'
     return render_template('music.html', title=title_four)
 
+@app.route('/mp3')
+def mp3():
+    title = "Welcome! - ¡Bienvenidos!"
+    return render_template('mp3.html', title=title)
+
 @app.route('/problemas_de_verbos')
 def problemas_de_verbos():
     title_vbs = 'Listen to the recordings and write the English or Spanish translation on the line.'

@@ -3,38 +3,38 @@ let allMusic = [
   {
     name: "Vig Town Road",
     artist: "Señor Vig",
-    img: "music-1",
+    img: "Vig",
     src: "Vig"
   },
   {
     name: "Capitales",
     artist: "Señor Vig",
-    img: "preposiciones",
+    img: "capitales",
     src: "capitales"
   },
   {
     name: "Reflexivo",
     artist: "Señor Vig",
-    img: "music-3",
+    img: "reflexive",
     src: "reflexive"
   },
   {
     name: "Hay que/Se prohíbe",
     artist: "Señor Vig",
-    img: "music-4",
+    img: "hay",
     src: "hay"
   },
   {
     name: "Centro comercial",
     artist: "Señor Vig",
     img: "music-5",
-    src: "ropa"
+    src: "Centro comercial"
   },
   {
     name: "Preposiciones",
     artist: "Señor Vig",
     img: "music-6",
-    src: "prepositions"
+    src: "Preposiciones"
   },
   // like this paste it and remember to give comma after ending of this bracket }
   // {

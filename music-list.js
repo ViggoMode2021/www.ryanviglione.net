@@ -27,14 +27,14 @@ let allMusic = [
   {
     name: "Centro comercial",
     artist: "Señor Vig",
-    img: "music-5",
-    src: "Centro comercial"
+    img: "ropa",
+    src: "ropa"
   },
   {
     name: "Preposiciones",
     artist: "Señor Vig",
-    img: "music-6",
-    src: "Preposiciones"
+    img: "prepositions",
+    src: "prepositions"
   },
   // like this paste it and remember to give comma after ending of this bracket }
   // {

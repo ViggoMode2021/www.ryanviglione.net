@@ -23,7 +23,7 @@ body{
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background: linear-gradient(var(--pink) 0%, var(--violet) 100%);
+  background: linear-gradient(to bottom right, red, yellow);
 }
 .wrapper{
   width: 380px;
@@ -31,7 +31,7 @@ body{
   overflow: hidden;
   position: relative;
   border-radius: 15px;
-  background: var(--white);
+  background-color: #F5FFFA;
   box-shadow: 0px 6px 15px var(--lightbshadow);
 }
 .wrapper i{
@@ -129,7 +129,7 @@ body{
 .controls i{
   font-size: 28px;
   user-select: none;
-  background: linear-gradient(var(--pink) 0%, var(--violet) 100%);
+  background: linear-gradient(var(--lightblack) 0%, var(--violet) 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

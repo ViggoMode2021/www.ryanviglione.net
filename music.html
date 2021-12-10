@@ -6,13 +6,18 @@
         <h1 style="text-align:center;">¡Escuche música!</h1>
         <h2>&#x1F3A7;</h2>
 
+        <div class="col align-self-start">
+      <a href="{{ url_for('mp3')}}">
+         <img src="static/images/mp3.jpg" width="150"
+   style="position:relative; left:470px; top:-10px;"/>
+
+          <h52><a href="https://www.codingnepalweb.com/create-music-player-in-javascript/" style="position:relative; left:150px; top: 100px;"">Mp3 player code originally by Coding Nepal and customized by myself.</a></h52>
+
     </div>
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <link rel="stylesheet" href="static/css/style2.css">
-
-    <br/><br/>
 
    <br/><br/>
 
@@ -40,9 +45,9 @@
   </div>
 </div>
 
-<h51><a href="{{ url_for('mp3')}}"">Link to mp3 player. This was originally created by Coding Nepal and modified by me!</a></h51>
+       </a>
+    </div>
 
    <br/><br/>
 
-<h52><a href="https://www.codingnepalweb.com/create-music-player-in-javascript/"">Coding Nepal's Website</a></h52></h51>
 {% endblock %}

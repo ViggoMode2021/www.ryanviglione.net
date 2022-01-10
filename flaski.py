@@ -1,5 +1,7 @@
 from flask import Flask, render_template, request, redirect
 from random import choice
+import psycopg2
+
 app = Flask(__name__)
 
 @app.route('/')
@@ -19,13 +21,68 @@ def about():
 
 @app.route('/downloadable_files')
 def downloadable_files():
-    title_download = "Exe files and stramable game"
+    title_download = "Exe files and word unscramble game"
     return render_template("downloadable_files.html", title= title_download)
 
 @app.route('/subscribe')
 def subscribe():
     title_two = 'Contact/Contacto'
     return render_template('subscribe.html', title=title_two)
+
+
+hostname = 'localhost'
+database = 'people_information'
+username = 'postgres'
+pwd = ''
+port_id = 5432
+conn = None
+cur = None
+
+@app.route('/update', methods=['POST'])
+def update():
+    try:
+        conn = psycopg2.connect(
+            host = hostname,
+            dbname = database,
+            user = username,
+            password = pwd,
+            port = port_id)
+
+        cur = conn.cursor()
+
+        create_script = '''CREATE TABLE IF NOT EXISTS people_information (
+            id         SERIAL PRIMARY KEY,
+            name       varchar(40) NOT NULL,
+            salary     int,
+            occupation    varchar(30)) '''
+
+        cur.execute(create_script)
+
+        insert_script = "INSERT INTO people_information (name, salary, occupation) VALUES (%s, %s, %s)"
+
+        name = request.form.get("name")
+        salary = request.form.get("salary")
+        profession = request.form.get("profession")
+
+        insert_values = [(name, salary, profession)]
+
+        for record in insert_values:
+            cur.execute(insert_script, record)
+
+        cur.execute('SELECT * FROM PEOPLE_INFORMATION')
+        for record in cur.fetchall():
+            print(record)
+
+        conn.commit()
+    except Exception as error:
+        print(error)
+    finally:
+        if cur is not None:
+            cur.close()
+        if conn is not None:
+            conn.close()
+
+    return render_template('subscribe.html')
 
 @app.route('/practice_Spanish')
 def practice_Spanish():

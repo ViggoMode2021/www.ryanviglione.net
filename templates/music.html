@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% block title %}{{title_four}}{% endblock %}
+
+{% block content %}
+    <div class= "container">
+        <h1 style="text-align:center;">¡Escuche música!</h1>
+        <h2>&#x1F3A7;</h2>
+
+        <div class="col align-self-start">
+      <a href="{{ url_for('mp3')}}">
+         <img src="static/images/mp3.jpg" width="150"
+   style="position:relative; left:500px; top:-30px;"/>
+
+             <br/><br/>
+
+          <h52><a href="https://www.codingnepalweb.com/create-music-player-in-javascript/">Mp3 player by Coding Nepal and customized by me.</a></h52>
+
+    </div>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="static/css/style2.css">
+
+   <br/><br/>
+
+  </div class= "container">
+  <h2>¡Haz clic abajo en las fotos para ir a escuchar!</h2>
+   </ol>
+
+<div class="container">
+  <div class="row">
+    <div class="col align-self-start">
+        <h3>My/Mi SoundCloud</h3> <a href="https://soundcloud.com/fortnightpenpal">
+         <img src="static/images/SoundCloud.jpg" width="300">
+      </a>
+    </div>
+    <div class="col align-self-center">
+     <h5>My/Mi Bandcamp</h5><a href="https://ryanviglione.bandcamp.com/">
+         <img src="static/images/Bandcamp.jpg" width="300">
+      </a>
+    </div>
+    <div class="col align-self-end">
+      <h6>My/Mi YouTube</h6> <a href="https://www.youtube.com/channel/UCUrpv2Zc0hvj9eMOvHS6kvw">
+         <img src="static/images/YouTube.png" width="300">
+      </a>
+    </div>
+  </div>
+</div>
+
+       </a>
+    </div>
+
+   <br/><br/>
+
+{% endblock %}

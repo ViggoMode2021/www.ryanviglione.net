@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<html lang="en">
+  <head>
+    <style>
+      body
+      {
+      background-image:url({{url_for('static', filename='images/Xochimilco.jpg')}})
+      }
+    </style>
+  </head>
+
+<a href='https://www.sporcle.com/games/ryansviglione/los-adjetivos-fsicos'><button type="button" class="btn btn-primary">Physical adjectives game</button>
+
+  <a href='https://www.sporcle.com/games/ryansviglione/los-adjetivos-de-la-personalidad'><button type="button" class="btn btn-secondary">Personality adjectives game</button>
+
+    <br/><br/>
+
+     <div style="text-align:left;">
+       <iframe width="560"  id="video_one" height="315" src="https://www.youtube.com/embed/jmjcw120nms" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+
+      <div style="text-align:left;">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/XwSJkVLQ1rQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+
+        <br/><br/>
+
+{% endblock %}

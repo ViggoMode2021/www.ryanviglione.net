@@ -1,0 +1,69 @@
+h32{
+font-size: 30px;
+color: white;
+
+}
+
+body{
+font-size: 25px;
+color: yellow;
+
+}
+
+h31{
+font-size: 20px;
+color: orange;
+
+}
+
+.div-dot:after
+{
+	content: "";
+	position: absolute;
+	z-index: 1;
+	top: -9px;
+	left: calc(50% - 9px);
+	width: 18px;
+	height: 18px;
+	background-color: goldenrod;
+	border: 1px solid rgb(48,49,51);
+	border-radius: 50%;
+	box-shadow: inset 0 0 0 2px white,
+					0 0 0 4px white;
+}
+
+        body { background: #FCF; }
+
+        .divider {								/* minor cosmetics */
+            display: table;
+            font-size: 24px;
+            text-align: center;
+            width: 75%; 						/* divider width */
+            margin: 40px auto;					/* spacing above/below */
+        }
+        .divider span { display: table-cell; position: relative; }
+        .divider span:first-child, .divider span:last-child {
+            width: 50%;
+            top: 13px;							/* adjust vertical align */
+            -moz-background-size: 100% 2px; 	/* line width */
+            background-size: 100% 2px; 			/* line width */
+            background-position: 0 0, 0 100%;
+            background-repeat: no-repeat;
+        }
+        .divider span:first-child {				/* color changes in here */
+            background-image: -webkit-gradient(linear, 0 0, 0 100%, from(transparent), to(#000));
+            background-image: -webkit-linear-gradient(180deg, transparent, #000);
+            background-image: -moz-linear-gradient(180deg, transparent, #000);
+            background-image: -o-linear-gradient(180deg, transparent, #000);
+            background-image: linear-gradient(90deg, transparent, #000);
+        }
+        .divider span:nth-child(2) {
+            color: #000; padding: 0px 5px; width: auto; white-space: nowrap;
+        }
+        .divider span:last-child {				/* color changes in here */
+            background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#000), to(transparent));
+            background-image: -webkit-linear-gradient(180deg, #000, transparent);
+            background-image: -moz-linear-gradient(180deg, #000, transparent);
+            background-image: -o-linear-gradient(180deg, #000, transparent);
+            background-image: linear-gradient(90deg, #000, transparent);
+        }

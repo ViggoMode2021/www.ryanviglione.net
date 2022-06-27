@@ -1,0 +1,34 @@
+
+h1{
+   font-family: "Apple Chancery", cursive;
+}
+
+h2{
+    color: pink;
+    font-size: 40px;
+    font-family: "Luminari", fantasy;
+}
+
+h3{
+    color: red;
+    font-size: 40px;
+    font-family: "Luminari", fantasy;
+}
+
+h5{
+    color: green;
+    font-size: 35px;
+    font-family: "FreeMono", monospace;
+}
+
+h6{
+    color: red;
+    font-size: 35px;
+    font-family: "FreeMono", monospace;
+
+}
+
+hr.rounded {
+  border-top: 8px solid #bbb;
+  border-radius: 5px;
+}

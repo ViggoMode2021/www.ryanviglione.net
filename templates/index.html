@@ -1,6 +1,11 @@
 <!doctype html>
 <html lang="en">
   <head>
+      <link rel="image_src" href="/static/images/Ryan_Viglione_Website.jpg">
+      <link rel="apple-touch-icon" sizes="180x180" href="/static/images/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/static/images/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/static/images/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
 
         <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -8,7 +13,7 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="static/css/home.css">
 
     <title>{{ title }}</title>
   </head>
@@ -32,7 +37,7 @@
   <path d="M9 5.5a3 3 0 0 0-2.83 4h1.098A2 2 0 0 1 9 6.5h3a2 2 0 1 1 0 4h-1.535a4.02 4.02 0 0 1-.82 1H12a3 3 0 1 0 0-6H9z"/>
 </svg></a>
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="/subscribe">Contact <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
+          <a class="nav-link" aria-current="page" href="/contact">Contact <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
   <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2zm13 2.383-4.758 2.855L15 11.114v-5.73zm-.034 6.878L9.271 8.82 8 9.583 6.728 8.82l-5.694 3.44A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.739zM1 11.114l4.758-2.876L1 5.383v5.73z"/>
 </svg></a>
          <li class="nav-item">
@@ -57,21 +62,16 @@
 
     <body>
     <h2>
-        Hello/hola everyone! My name is Ryan Viglione and I am a high school Spanish teacher who has
-        gotten into programming Python. Please feel free to navigate this website using the navbar above to learn more.
-        Below are a few images from my travels to Colombia! Below that is a photo that will take you to a timeline of my life!
-        Thank you/gracias for stopping by.
+        Hello/hola everyone! My name is Ryan Viglione, and I am a former high school Spanish teacher! Now, I am
+        working as a backend software developer (Python) and I'm also a
+        Certified Cloud Practitioner with Amazon Web Services.
+        Please feel free to navigate this website using the navbar above to learn more.
+        Below are a few images from my travels to Colombia! At the bottom of the page, you will find an image to view/download
+        my résumé and an image to see a timeline of my life!
     </h2>
 
-<div class="col align-self-start">
-      <a href="static/Ryan Viglione - Résumé.pdf">
-         <img src="static/images/download_resume.jpg" width="150">
-       </a>
-    </div>
+        <br>
 
-
-<html>
-  <head>
     <title>Slideshow Images</title>
     <style>
       .slider {
@@ -145,6 +145,13 @@
     </div>
   </body>
 </html>
+
+    <br>
+    <div class="col align-self-start">
+      <a href="static/images/Ryan S. Viglione - Résumé 2022.pdf">
+         <img src="static/images/download_resume.jpg" width="150">
+       </a>
+    </div>
 
     <div class="col align-self-start">
       <a href="{{ url_for('timeline')}}">

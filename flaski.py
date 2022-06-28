@@ -263,4 +263,4 @@ def form_cuatro():
         return render_template('form_cuatro.html', verb_answers_dos=verb_answers_dos)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=False)

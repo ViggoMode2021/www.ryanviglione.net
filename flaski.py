@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request
 from random import choice
 import psycopg2
 
@@ -24,11 +24,10 @@ def downloadable_files():
     title_download = "Exe files and word unscramble game"
     return render_template("downloadable_files.html", title= title_download)
 
-@app.route('/subscribe')
-def subscribe():
+@app.route('/contact')
+def contact():
     title_two = 'Contact/Contacto'
-    return render_template('subscribe.html', title=title_two)
-
+    return render_template('contact.html', title=title_two)
 
 hostname = 'localhost'
 database = 'people_information'
@@ -82,7 +81,7 @@ def update():
         if conn is not None:
             conn.close()
 
-    return render_template('subscribe.html')
+    return render_template('contact.html')
 
 @app.route('/practice_Spanish')
 def practice_Spanish():

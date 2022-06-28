@@ -1,11 +1,10 @@
 h1{
-    color: red;
+    color: black;
     font-size: 75px;
-    text-decoration: underline
 }
 
 h2{
-    color: green;
+    color: black;
     font-size: 45px;
     font-family: Lucida Console, Courier New, monospace
 }
@@ -31,10 +30,20 @@ h6{
 }
 
 a{
-    color: red;
+    color: black;
     font-size: 15px;
     position: relative;
     white-space: nowrap;
+}
+
+#click_for_links{
+text-align: center;
+}
+
+#mp3_credit_link {
+
+text-align: center;
+
 }
 
 body{

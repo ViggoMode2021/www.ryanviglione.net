@@ -1,0 +1,27 @@
+h1{
+    color: white;
+    font-size: 95px;
+
+
+}
+
+body{
+    background: rgb(18,17,31);
+    background: linear-gradient(90deg, rgba(18,17,31,0.8970938717283788) 0%, rgba(9,9,121,1) 0%, rgba(0,0,0,1) 94%);
+}
+
+h1{
+    color: white;
+    font-size: 75px;
+}
+
+h2{
+    color: orange;    font-size: 25px;
+
+}
+
+.image2{
+position: absolute;
+right: 0px;
+bottom: 0px;
+}

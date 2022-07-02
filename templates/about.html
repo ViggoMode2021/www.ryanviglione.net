@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="static/css/about.css">
 
   </div class= "container">
-   <h1><center>Links to my social media/Enlaces a mis redes sociales: </center></h1>
+    <h4>My links/Mis enlaces</h4>
    </ol>
 
 <html lang="en">
@@ -21,10 +21,17 @@
       {
       background-image:url({{url_for('static', filename='images/Medallo.jpg')}})
       }
+
+      h4 {
+      text-align: center;
+      font-size: 34px;
+      color: white;
+      background-color: black;
+      }
     </style>
   </head>
 
-  <h20>My/Mi Linktree</h20> <h21>- Linktree is a cumulative collection of websites about me.</h21>
+  <h20>My/Mi Linktr.ee</h20> <h21>- Linktr.ee is a cumulative collection of websites about me.</h21>
 
 <div class="col align-self-start">
       <a href="https://linktr.ee/ryanviglione">
@@ -34,7 +41,7 @@
 
         <br/><br/>
 
-<h20>My/Mi GitHub</h20> <h21>- GitHub is where I keep all my public repositories of Python projects.</h21><h21><a href="{{ url_for('downloadable_files')}}"">Links to downloadable projects.</a></h21>
+<h20>My/Mi GitHub</h20> <h21>- GitHub is where I keep all of my repositories of coding projects.</h21><h21><a href="{{ url_for('downloadable_files')}}"">Links to downloadable projects.</a></h21>
 
 <div class="col align-self-start">
       <a href="https://github.com/ViggoMode2021">
@@ -44,7 +51,7 @@
 
         <br/><br/>
 
-<h20>My/Mi LinkedIn</h20> <h22>- LinkedIn is my virtual résumé essentially.</h22>
+<h20>My/Mi LinkedIn</h20> <h21>- LinkedIn is my virtual résumé essentially.</h21>
 
     <div class="col align-self-center">
       <a href="https://www.linkedin.com/in/ryan-viglione-6602628a/">

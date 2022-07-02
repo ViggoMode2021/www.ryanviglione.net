@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+{% block title %}{{title}}{% endblock %}
+
+{% block content %}
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="static/css/practice_spanish_2.css">
+
+          <html lang="en">
+  <head>
+            <link rel="image_src" href="/static/images/Ryan_Viglione_Website.jpg">
+            <link rel="image_src" href="/static/images/Ryan_Viglione_Website.jpg">
+      <link rel="apple-touch-icon" sizes="180x180" href="/static/images/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/static/images/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/static/images/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+ <style>
+    body
+    {
+     background-image:url("/static/images/Blackboard.jpg");
+     }
+</style>
+  </head>
+
+  <h8>Practice Spanish/Practicar español</h8>
+
+  <div id="main">
+<nav class="navbar navbar-default">
+  <ul class="nav navbar-nav">
+    <li class="dropdown">
+      <a href="#0" class="dropdown-toggle" data-toggle="dropdown" data-target="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Study topic<span class="caret"></span></a>
+      <ul class="dropdown-menu" id="dropdon-menu">
+        <li><a href="{{ url_for('verbos')}}">Verbos (verbs) 🏃</a></li>
+      <li><a href="{{ url_for('adjetivos')}}">Adjetivos (adjectives) 📚</a></li>
+      <li><a href="{{ url_for('sustantivos')}}">Sustantivos (nouns) 🏘️</a></li>
+      <li><a href="{{ url_for('Cultura')}}">Cultura (culture) 🗺💃🏼🕺🏽</a></li>
+        <li><a href="{{ url_for('diccionario')}}">Diccionario (dictionary) 📙</a></li>
+      </ul>
+    </li>
+    <li class="dropdown">
+      <a href="#0" class="dropdown-toggle" data-toggle="dropdown" data-target="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Website practice problems (under construction!)<span class="caret"></span></a>
+      <ul class="dropdown-menu" id="dropdon-menu">
+    <li><a href="{{ url_for('formularios')}}">problemas de números (number problems) #️⃣</a></li>
+      <li><a href="{{ url_for('problemas_de_verbos')}}"">problemas de escuchar (listening problems) 👂</a></li>
+        <li><a href="{{ url_for('llenar_los_espacios')}}"">llenar los espacios -verbos ✒️️</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div>
+            <br>
+            <br>
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+<div id = "compliment_text">
+    <h8>¡Hola!</h8>
+            <br/><br/>
+    <h29>Responde a la pregunta abajo para recibir un cumplido gratis en español.
+    Respond to the question below to receive a free compliment in Spanish.</h29>
+            <br/><br/>
+</div>
+
+    <form action="/greet">
+        <label>¿Cómo te llamas? Me llamo
+            <input type="text" name="person"></label>
+        <input type="submit">
+    </form>
+</body>
+
+        <br/><br/>
+
+        <br/><br/>
+
+        <br/><br/>
+
+<h44>Please click the drop-down menu above in order to navigate to the page that contains the topic you desire. From there, you will find
+buttons that will link you to resources that I created to help practice your Spanish!</h44>
+</html>
+
+                  <br/><br/>
+                   <h46><a href="https://www.geeksforgeeks.org/using-matplotlib-for-animations/"">Link to how I learned how to make the graph below.</a></h46>
+        <br/><br/>
+          <IMG SRC="/static/images/languages.gif">
+
+{% endblock %}

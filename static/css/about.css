@@ -24,21 +24,23 @@ h20{
     color: white;
     font-size: 15px;
     font-family: "Lucida Console", "Courier New", monospace;
-    background-color:black
+    font-weight: bold;
+    background-color:black;
 }
 
 h21{
     color: pink;
     font-size: 12
     font-style: italic;
-    background-color:black
+    font-weight: bold;
+    background-color:black;
 }
 
 h22{
     color: pink;
-    font-size: 15
+    font-size: 15;
     font-weight: bold;
-    background-color:black
+    background-color:black;
 }
 
 h29{

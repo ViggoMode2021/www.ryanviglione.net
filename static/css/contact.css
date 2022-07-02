@@ -1,6 +1,24 @@
-h40{
+h40 {
 
 color: pink;
 font-size: 30px;
+
+}
+
+#mail {
+
+color: white;
+text-decoration: none;
+font-weight: bold;
+font-size: 20px;
+
+}
+
+h4 {
+
+text-align: center;
+font-size: 34px;
+color: white;
+background-color: black;
 
 }

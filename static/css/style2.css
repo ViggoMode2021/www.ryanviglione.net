@@ -34,16 +34,14 @@ a{
     font-size: 15px;
     position: relative;
     white-space: nowrap;
+    text-decoration: none;
 }
 
-#click_for_links{
-text-align: center;
-}
-
-#mp3_credit_link {
-
-text-align: center;
-
+#mp3_player{
+    color: black;
+    font-size: 65px;
+    position: relative;
+    white-space: nowrap;
 }
 
 body{

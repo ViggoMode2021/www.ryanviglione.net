@@ -1,12 +1,21 @@
 from flask import Flask, render_template, request
 from random import choice
+import random
 
 app = Flask(__name__)
 
 @app.route('/')
 def index():
-    title = "Welcome! - ¡Bienvenidos!"
-    return render_template('index.html', title=title)
+
+    Spanish_words = ['hablar - to talk', 'comer - to eat',  'vivir - to live', 'trabajar - to work', 'leer - to read',
+                     'escribir - to write', 'bailar - to dance', 'cantar - to sing', 'estudiar - to study',
+                  'ir - to go', 'jugar- to play (a sport or game)', 'tocar - to play (an instrument)', 'correr - to run',
+                     'ver - to watch/see', 'mirar - to watch/see', 'dibujar - to draw', 'nadar - to swim', 'beber - to drink',
+                  'practicar - to practice', 'dormir - to sleep', 'viajar - to travel']
+
+    random_spanish_word = (random.choice(Spanish_words))
+
+    return render_template('index.html', random_spanish_word=random_spanish_word)
 
 @app.route('/timeline')
 def timeline():
@@ -16,7 +25,7 @@ def timeline():
 @app.route('/about')
 def about():
     title = "Links to Ryan's other websites"
-    return render_template("about.html", title= title)
+    return render_template("about.html", title=title)
 
 @app.route('/downloadable_files')
 def downloadable_files():
@@ -27,60 +36,6 @@ def downloadable_files():
 def contact():
     title_two = 'Contact/Contacto'
     return render_template('contact.html', title=title_two)
-
-hostname = 'localhost'
-database = 'people_information'
-username = 'postgres'
-pwd = ''
-port_id = 5432
-conn = None
-cur = None
-
-@app.route('/update', methods=['POST'])
-def update():
-    try:
-        conn = psycopg2.connect(
-            host = hostname,
-            dbname = database,
-            user = username,
-            password = pwd,
-            port = port_id)
-
-        cur = conn.cursor()
-
-        create_script = '''CREATE TABLE IF NOT EXISTS people_information (
-            id         SERIAL PRIMARY KEY,
-            name       varchar(40) NOT NULL,
-            salary     int,
-            occupation    varchar(30)) '''
-
-        cur.execute(create_script)
-
-        insert_script = "INSERT INTO people_information (name, salary, occupation) VALUES (%s, %s, %s)"
-
-        name = request.form.get("name")
-        salary = request.form.get("salary")
-        profession = request.form.get("profession")
-
-        insert_values = [(name, salary, profession)]
-
-        for record in insert_values:
-            cur.execute(insert_script, record)
-
-        cur.execute('SELECT * FROM PEOPLE_INFORMATION')
-        for record in cur.fetchall():
-            print(record)
-
-        conn.commit()
-    except Exception as error:
-        print(error)
-    finally:
-        if cur is not None:
-            cur.close()
-        if conn is not None:
-            conn.close()
-
-    return render_template('contact.html')
 
 @app.route('/practice_Spanish')
 def practice_Spanish():
@@ -102,42 +57,6 @@ def greet_person():
 
 #End MadLibs functionality and logic
 
-#Dictionary funcionality and logic
-@app.route('/definitive')
-def define():
-
-    DICTIONARY = {'to talk': 'hablar', 'to eat': 'comer',  'to live': 'vivir', 'to work': 'trabajar', 'to read':
-                  'leer', 'escribir': 'to write', 'bailar': 'to dance', 'cantar': 'to sing', 'to study': 'estudiar',
-                  'to go': 'ir', 'jugar': 'to play (a sport or game)', 'tocar': 'to play (an instrument)', 'to run':
-                  'correr', 'to watch': 'ver/mirar', 'to draw': 'dibujar', 'to swim': 'nadar', 'to drink': 'beber',
-                  'to practice': 'practicar', 'to see': 'ver/mirar', 'to sleep': 'dormir', 'to travel': 'viajar'}
-
-    word = request.args.get("definition_word")
-
-    if word in DICTIONARY:
-        meaning=DICTIONARY[word]
-        return render_template('definition.html', meaning = meaning, word = word)
-    else:
-        return render_template('fail_dictionary.html')
-
-#Dictionary funcionality and logic
-@app.route('/definitive_dos')
-def define_dos():
-
-    DICTIONARY_DOS = {'hablar': 'to talk', 'comer': 'to eat',  'vivir': 'to live', 'trabajar': 'to work', 'leer':
-                  'to read', 'escribir': 'to write', 'bailar': 'to dance', 'cantar': 'to sing', 'estudiar': 'to study',
-                  'ir': 'to go', 'jugar': 'to play (a sport or game)', 'tocar': 'to play (an instrument)', 'correr':
-                  'to run', 'ver': 'to watch/see', 'mirar': 'to watch/see', 'dibujar': 'to draw', 'nadar': 'to swim', 'beber': 'to drink',
-                  'practicar': 'to practice', 'dormir': 'to sleep', 'viajar': 'to travel'}
-
-    word_two = request.args.get("definition_word_dos")
-
-    if word_two in DICTIONARY_DOS:
-        meaning_two=DICTIONARY_DOS[word_two]
-        return render_template('definition_two.html', meaning_two = meaning_two, word_two = word_two)
-    else:
-        return render_template('fail_dictionary.html')
-
 @app.route('/diccionario')
 def diccionario():
     title_dropdown_6 = 'Diccionario (English to Spanish)'
@@ -152,24 +71,24 @@ def adjetivos():
 @app.route('/sustantivos')
 def sustantivos():
     title_dropdown_2 = 'Sustantivos/nouns'
-    return render_template("sustantivos.html", title= title_dropdown_2)
+    return render_template("sustantivos.html", title=title_dropdown_2)
 
 @app.route('/Cultura')
 def Cultura():
     title_dropdown_3 = 'Cultura/culture'
-    return render_template("Cultura.html", title= title_dropdown_3)
+    return render_template("Cultura.html", title=title_dropdown_3)
 
 @app.route('/verbos')
 def verbos():
     title_dropdown_5 = 'Verbos/verbs'
-    return render_template("verbos.html", title= title_dropdown_5)
+    return render_template("verbos.html", title=title_dropdown_5)
 
 @app.route('/formularios')
 def formularios():
     title_dropdown_5 = 'Formularios/forms'
-    return render_template("formularios.html", title= title_dropdown_5)
+    return render_template("formularios.html", title=title_dropdown_5)
 
-@app.route('/llenar_los_espacios', methods = ["POST", "GET"])
+@app.route('/llenar_los_espacios', methods=["POST", "GET"])
 def llenar_los_espacios():
     return render_template("llenar_los_espacios.html")
 
@@ -187,9 +106,8 @@ def form_dos():
 
     if not one or not two or not three or not four or not five:
         error_statement = "All form fields are required"
-        return render_template('fail_numbers.html', error_statement = error_statement,
-                               one = one, two = two, three = three, four = four, five = five)
-
+        return render_template('fail_numbers.html', error_statement=error_statement,
+                               one=one, two=two, three=three, four=four, five=five)
 
     if one == "uno" and two == "dos" and three == "tres" and four == "cuatro" and five == "cinco":
         return render_template('perfect_score.html')
@@ -200,7 +118,7 @@ def form_dos():
 @app.route('/perfect_score', methods = ["POST", "GET"])
 def perfect_score():
     title_perfect = "You got a perfect score!"
-    return render_template('perfect_score.html', title = title_perfect, answers=answers)
+    return render_template('perfect_score.html', title=title_perfect, answers=answers)
 
     one = request.form.get("one")
     two = request.form.get("two")

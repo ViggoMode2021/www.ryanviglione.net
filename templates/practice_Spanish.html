@@ -16,7 +16,6 @@
     <h1>Practice Spanish/Practicar español</h1>
     </div>
 
-  <body>
 <div id = "compliment_text">
     <h2>¡Hola!</h2>
               <img src="static/images/Paraguay.jpg" width="120">
@@ -30,7 +29,6 @@
             <input type="text" name="person"></label>
         <button class="custom-btn btn-5"><span>Haz clic</span></button>
     </form>
-  </body>
 
   </div>
 
@@ -87,9 +85,11 @@
 </body>
 
 <center>
-<h46><a href="https://www.geeksforgeeks.org/using-matplotlib-for-animations/">Link to how I learned how to make the graph below.</a></h46>
+<h46><a id = "link" href="https://www.geeksforgeeks.org/using-matplotlib-for-animations/">Link to how I learned how to make the graph below.</a></h46>
         <br/><br/>
           <IMG SRC="/static/images/languages.gif">
 </center>
+
+        <a href="{{ url_for('index')}}"id ="home">Go home</a>
 
 {% endblock %}

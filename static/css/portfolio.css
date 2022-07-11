@@ -106,8 +106,6 @@ body {
     -webkit-text-fill-color: rgba(255, 255, 255, 0);
 }
 
-
-/*-------------------------animations-----------------------*/
 @keyframes transitionAnimation {
     0% {
         opacity: 0;
@@ -137,9 +135,6 @@ body {
     }
 }
 
-
-/*-------------------------popup------------------------*/
-/* credits: https://www.youtube.com/watch?v=lAS2glU0xlc */
 .overlay {
     display: flex;
     align-items: center;
@@ -205,8 +200,6 @@ body {
 .overlay:target .popup {
     transform: scale(1);
     top: 0;
-    /* right: 0; */
-    /* transform: rotate(0); */
 }
 
 .popup-close {
@@ -240,9 +233,6 @@ body {
     color: var(--bgColor);
 }
 
-
-/*-----------------------parallax-----------------------*/
-/* credits: https://www.youtube.com/watch?v=aywzn9cf-_U */
 #stars1 {
     width: 1px;
     height: 1px;

@@ -216,3 +216,18 @@ background: linear-gradient(0deg, rgba(255,27,0,1) 0%, rgba(251,75,2,1) 100%);
   transition:800ms ease all;
 }
 
+#link{
+
+color: lightyellow;
+font-size: 18px;
+text-decoration:none;
+
+}
+
+#home{
+
+color: white;
+text-decoration: none;
+font-size: 30px;
+
+}

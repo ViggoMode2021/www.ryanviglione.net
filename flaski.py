@@ -21,7 +21,7 @@ def index():
 def timeline():
     title_timeline = "Timeline of my life!"
     return render_template("timeline.html", title=title_timeline)
-
+'''
 @app.route('/about')
 def about():
     title = "Links to Ryan's other websites"
@@ -36,6 +36,7 @@ def downloadable_files():
 def contact():
     title_two = 'Contact/Contacto'
     return render_template('contact.html', title=title_two)
+'''
 
 @app.route('/practice_Spanish')
 def practice_Spanish():

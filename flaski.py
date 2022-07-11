@@ -163,7 +163,7 @@ def form_tres():
 global verb_answers_dos
 verb_answers_dos = []
 
-@app.route('/form_cuatro', methods = ["POST", "GET"])
+@app.route('/form_cuatro', methods=["POST", "GET"])
 def form_cuatro():
 
     ser = request.form.get("ser")

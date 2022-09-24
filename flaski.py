@@ -21,6 +21,8 @@ def index():
 def timeline():
     title_timeline = "Timeline of my life!"
     return render_template("timeline.html", title=title_timeline)
+
+#Deprecated pages below
 '''
 @app.route('/about')
 def about():

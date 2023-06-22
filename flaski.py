@@ -39,6 +39,30 @@ def contact():
     title_two = 'Contact/Contacto'
     return render_template('contact.html', title=title_two)
 '''
+@app.route('/PowerShell_Projects')
+def PowerShell_Projects():
+    PowerShell_Projects_Title = 'PowerShell Projects'
+    return render_template('PowerShell_Projects.html', PowerShell_Projects_Title=PowerShell_Projects)
+@app.route('/EliteShell')
+def EliteShell():
+    EliteShell_Title = 'EliteShell'
+    return render_template('EliteShell.html', EliteShell_Title=EliteShell_Title)
+
+@app.route('/EliteShell_README')
+def EliteShell_README():
+    EliteShell_README_Title = 'EliteShell - README'
+    return render_template('EliteShell-README.html', EliteShell_README_Title=EliteShell_README_Title)
+
+@app.route('/EliteShell_Pictures')
+def EliteShell_Pictures():
+    EliteShell_Pictures_Title = 'EliteShell - README'
+    return render_template('EliteShell-Pictures.html', EliteShell_Pictures_Title=EliteShell_Pictures_Title)
+
+@app.route('/EliteShell_Videos')
+def EliteShell_Videos():
+    EliteShell_Videos_Title = 'EliteShell - Videos'
+    return render_template('EliteShell-Videos.html', EliteShell_Videos_Title=EliteShell_Videos_Title)
+
 
 @app.route('/practice_Spanish')
 def practice_Spanish():
@@ -182,4 +206,4 @@ def form_cuatro():
         return render_template('form_cuatro.html', verb_answers_dos=verb_answers_dos)
 
 if __name__ == "__main__":
-    app.run(debug=False)
+    app.run(debug=True)

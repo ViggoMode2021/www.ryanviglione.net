@@ -1,45 +1,76 @@
-EliteShell.html<head>
+<head>
     <meta charset="utf-8" />
-    <title>EliteShell - Created by Ryan Viglione</title>
+    <title>EliteShell - About/README</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/EliteShell.css') }}">
 </head>
-<body>
 
-    <div class="container bar">
+<div class="container bar">
         <label class="floatLeft" for="navBtn"><span></span></label>
         <span class="floatRight paddingRight2rem">
             EliteShell - Desktop application to learn Windows, Windows Server, and PowerShell!
-            <b><a href="https://github.com/ViggoMode2021/EliteShell/tree/main">Source Code</a></b>
         </span>
     </div>
-    <div class="container">
+  <div class="container">
         <input type="checkbox" class="navBtn" id="navBtn" />
         <nav>
             <ul>
                 <li>
-                    <a href="#"><i class="fa fa-heart"></i>About/ReadME</a>
+                    <a href="{{url_for('EliteShell_README')}}"><i class="fa fa-book"></i>About/ReadME</a>
                 </li>
                 <li>
-                    <a href="#"><i class="fa fa-medkit"></i>Pictures</a>
+                    <a href="{{url_for('EliteShell_Pictures')}}"><i class="fa fa-image"></i>Pictures</a>
                 </li>
                 <li>
-                    <a href="#"><i class="fa fa-heartbeat"></i>Videos</a>
+                    <a href="{{url_for('EliteShell_Videos')}}"><i class="fa fa-film"></i>Videos</a>
                 </li>
                 <li>
-                    <a href="#"><i class="fa fa-ambulance"></i>Contact</a>
+                    <a href="{{url_for('EliteShell_News')}}"><i class="fa fa-book"></i>EliteShell News</a>
                 </li>
+                <li>
+                    <a href="{{url_for('index')}}"><i class="fa fa-heart"></i>Ryan Viglione Homepage</a>
+                </li>
+                <li>
             </ul>
         </nav>
     </div>
 
+<body>
+
+<h2>
+    About/README
+</h2>
 <h1>
-    Welcome to the official page for EliteShell!
+    EliteShell is a Windows desktop application/game written in PowerShell and .NET designed for users to practice PowerShell cmdlets for Windows and Windows Server administration and daily tasks. For each correct answer, users receive points that they can use to 'buy' other PowerShell system administration scripts from GitHub. These solved practice problems, answers, time, date, and points are stored in a csv file that is created when the user prompts to start a new game. It also contains non-PowerShell practice problems for general IT concepts, such as the OSI Model and Windows Registry. Currently, the practice concepts are: </h1>
+    <ul>
+
+<li>Windows General</li>
+
+<li>Windows Registry</li>
+
+<li>Active Directory</li>
+
+<li>Networking</li>
+
+<li>DHCP + DNS</li>
+
+    </ul>
+
+<h1>Instructions:</h1>
+    <h1>
+Click File, New Game, and name the corresponding 'game store file' (will create a csv file on desktop) that will store points and correct answers that the user achieves.
+
+Solve problems by selecting them from the dropdown and writing the correct PowerShell cmdlet or answer.
+
+Track progress by viewing the 'Current Stats:' box on the right side of the screen, or get a more detailed summary of user progress by going to 'View Score + Stats'.
+
+Problems that completed will change from blue to green on the dropdown. If clicked on, their titles will change from black to green with (COMPLETED) appended to them.
 </h1>
 
 <br>
-    <img src="static/images/EliteShell-Icon.png" width="120">
+    <a href="https://github.com/ViggoMode2021/EliteShell/tree/main"><img src="static/images/EliteShell-Icon.png" width="120"></a>
 
+    <br>
     <br>
 
 <a href="https://codepen.io/azer-hesim/pen/bPbjLj"></i>CodePen link for HTML/CSS</a>

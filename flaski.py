@@ -47,7 +47,6 @@ def PowerShell_Projects():
 def EliteShell():
     EliteShell_Title = 'EliteShell'
     return render_template('EliteShell.html', EliteShell_Title=EliteShell_Title)
-
 @app.route('/EliteShell_README')
 def EliteShell_README():
     EliteShell_README_Title = 'EliteShell - README'
@@ -73,7 +72,7 @@ def practice_Spanish():
     title_four = 'Practice Spanish here'
     return render_template('practice_Spanish.html', title=title_four)
 
-#MadLibs funcationality and logic
+#MadLibs functionality and logic
 @app.route('/greet')
 def greet_person():
     player = request.args.get("person")

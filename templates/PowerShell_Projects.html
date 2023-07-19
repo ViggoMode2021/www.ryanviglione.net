@@ -28,12 +28,13 @@
             <div class="head"><a href="https://github.com/ViggoMode2021/PowerShellScripts/blob/main/active-directory.ps1"><span class="headline hl1">Add student or staff account to AD</span><p><span class="headline hl4"></span></a></p></div>
            </p>
 
-            <p>With this script, the admin can create either a student or staff account and have them added to the proper organizational unit, as well as creating them a default password, setting their home directory, and mapping their network
-            drive.</p>
+            <p>With this script, the admin can create either a student or staff account and have them added to the proper organizational unit,
+                as well as creating them a default password, setting their home directory, and mapping their network drive.</p>
 
             </div>
-        <div class="collumn"><div class="head"><a href="https://github.com/ViggoMode2021/PowerShellScripts/blob/main/MoveOUsV2.ps1"><span class="headline hl1">Move OUs at end of school year</span><p><span class="headline hl3"></span></a></p></div>
-	<figure class="figure">
+        <div class="collumn">
+            <div class="head"><a href="https://github.com/ViggoMode2021/PowerShellScripts/blob/main/MoveOUsV2.ps1"><span class="headline hl1">Move OUs at end of school year</span><p><span class="headline hl3"></span></a></p></div></p>
+        <span class="citation"></span>
 
         <p>In a school themed (K-12) Active Directory environment, the graduating class' child OU of the parent 'High_School_Top_OU ' OU will get archived (moved to an OU named 'Graduated_Classes', and will create this OU if it doesn't exist), the 8th grade OU will get moved to the High-School OU,
             the 4th grade child OU of the 'Elementary_School_Top_OU' will be moved to the Middle-School OU, and a new OU for the incoming elementary school class. Before the script moves these OUs accordingly, it makes sure that this script is run AFTER July 1st of the current year,
@@ -41,26 +42,45 @@
             school will be titled 'Class_Of_2035' if the script is run in 2023 after July 1st.
         </p>
 
-            <p><span class="citation"></span></p>
-            <p></p>
         </div>
         <div class="collumn">
             <div class="head"><a href="https://github.com/ViggoMode2021/PowerShellScripts/blob/main/Disable-and-Enable-AD-Users.ps1"><span class="headline hl1">Enable or disable inactive users (GUI/.Net)</span><p><span class="headline hl3"></span></a></p></div>
-
+        <p><span class="citation"></span></p>
 					<p>This script will find users in Active Directory who have NEVER logged in and then allow the admin to either disable an individual user, or disable all the users who have never logged in for a given OU. The admin can also enable the users that were disabled as well.
                     This script has a GUI that was created with WinForms (.NET).</p></div>
 
-            <p><span class="citation"></span></p>
-            <p></p>
-        </div>
-        <div class="collumn">
+<div class="collumn">
             <div class="head"><a href="https://github.com/ViggoMode2021/PowerShellScripts/blob/main/AD-Password-Generator.ps1"><span class="headline hl1">Active Directory Password Generator</span><p><span class="headline hl4"></span></a></p></div>
 
             <p>This script will generate a password for a user based on a csv file that they have. The admin will select a csv file on their local computer, select a user, and
             then click the 'Generate Password' button. It will display the password for the new user in plaintext and allow it to be copied to the clipboard. If the password does not meet the complexity of the domain,
             the script will append numbers and/or special characters in order to create an adequate password. This script also has a GUI that was created with WinForms (.NET).</p></div>
-    </div>
-</div>
+
+        </div>
+
+    <!-- Second Row -->
+    <div class="collumn">
+            <div class="head"><a href="https://github.com/ViggoMode2021/PowerShellScripts/blob/main/War_Room_Scripts/TimeSheet-Automator.ps1"><span class="headline hl3">Timesheet Automator</span><p><span class="headline hl4"></span></a></p></div>
+            This script automates and replicates the process of creating a new timesheet every Monday and logging the user's clock in time when the script is run. It automatically calculates the hours worked by subtracting 30 minutes (lunch break)
+        from the difference between the clock in time to the standard clock out time of 5:00 PM. The script copies a standard template of a timesheet (Word document) at the start of the week and names it "TimeSheet-Week-Of-7-17-2023" or whatever date.
+        It runs the same way for Tuesday-Thursday. On Friday, it calculates the week's total hours worked by adding up the number of hours worked each day. It then prints out the timesheet.</p></div>
+        <div class="collumn">
+            <div class="head"><a href="https://github.com/ViggoMode2021/Network-Necromancer"><span class="headline hl1">Network-Necromancer</span><p><span class="headline hl4"></span></a></p></div>
+           </p>
+
+            <p>Network Necromancer is a PowerShell script that automates adding, removing, and connecting to networks by implementing variations of 'netsh wlan show profiles' in the backend.
+                This script will easily clean up networks stored on a computer's NIC, export and import network based XML files, and more.
+                For example, a user can utilize this script to move the networks stored on one computer onto another computer without manually connecting to networks and inputting passwords.</p>
+
+            </div>
+        <div class="collumn">
+            <div class="head"><a href="https://github.com/ViggoMode2021/Partition-Pantheon"><span class="headline hl1">Partition Pantheon</span><p><span class="headline hl3"></span></a></p></div></p>
+        <span class="citation"></span>
+
+        <p>Partition-Pantheon is a flash drive/harddrive partitioning automation script that will seamlessly automate the process of formatting, naming, setting letters, and allocating size to partitions. It will also move files to partitions based on file extensions.
+        </p>
+
+        </div>
 
 </body>
 </html>

@@ -1,4 +1,5 @@
-# RViglione_Website-SitioWeb
+# www.ryanviglione.net #
+
 This repository consists of my Flask project for my website. It contains the main Python/Flask file, as well as HTML templates, CSS sheets, and static files for the different pages. I will be updating this frequently. 
 
 The file is originally hosted using PythonAnywhere.com, but the domain I purchased is from IONOS. The CNAME file points IONOS to the domain, which is www.RyanViglione.net

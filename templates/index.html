@@ -18,19 +18,9 @@
         <div id="stars3"></div>
     </section>
 
-    <a id="profilePicture" href="#popup">
+    <a id="profilePicture" href="{{ url_for('projects')}}">
         <img src="{{ url_for('static', filename='images/me.jpg') }}" alt="Profile Picture">
     </a>
-
-    <div class="overlay" id="popup">
-        <div class="popup">
-            <div class="popup-photo">
-                <a href="{{ url_for('static', filename='images/me.jpg') }}" target="_blank">
-                </a>
-            </div>
-            <div class="popup-quote">
-                {{ random_spanish_word }}
-            </div>
 
             <a class="popup-close" onclick="history.back()">&times;</a>
         </div>
@@ -52,20 +42,20 @@
         <a class="link" href="https://github.com/ViggoMode2021" target="_blank"><i
                 class="fab fa-github">&nbsp;</i>Github</a>
 
-      <a class="link" href="https://www.viglms.org/" target="_blank"><i
+      <a class="link" href="https://github.com/ViggoMode2021/Vig-LMS" target="_blank"><i
               class="fas fa-book">&nbsp;</i>Vig LMS</a>
 
       <a class="link" href="{{url_for('EliteShell_README')}}" target="_blank"><i
-              class="fas fa-book">&nbsp;</i>EliteShell</a>
+              class="fab fa-microsoft">&nbsp;</i>EliteShell</a>
 
         <a class="link" href="{{url_for('PowerShell_Projects')}}" target="_blank"><i
-              class="fas fa-book">&nbsp;</i>PowerShell Projects</a>
+              class="fab fa-microsoft">&nbsp;</i>PowerShell Projects</a>
+
+        <a class="link" href="https://github.com/ViggoMode2021/Connecticut-Runs-On-PowerShell" target="_blank"><i
+                class="fab fa-windows">&nbsp;</i>Connecticut Runs On PowerShell</a>
 
         <a class="link" href="https://www.youtube.com/channel/UCUrpv2Zc0hvj9eMOvHS6kvw" target="_blank"><i
                 class="fab fa-youtube">&nbsp;</i>YouTube</a>
-
-        <a class="link" href="https://soundcloud.com/fortnightpenpal" target="_blank"><i
-                class="fa fa-music">&nbsp;</i>Soundcloud</a>
 
         <a class="link" href="https://ryanviglione.bandcamp.com/" target="_blank"><i
                 class="fa fa-music">&nbsp;</i>Bandcamp</a>

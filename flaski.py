@@ -1,52 +1,32 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect
 from random import choice
-import random
+from flask import send_file
 
 app = Flask(__name__)
 
 @app.route('/')
 def index():
+    return render_template('index.html')
 
-    Spanish_words = ['hablar - to talk', 'comer - to eat',  'vivir - to live', 'trabajar - to work', 'leer - to read',
-                     'escribir - to write', 'bailar - to dance', 'cantar - to sing', 'estudiar - to study',
-                  'ir - to go', 'jugar- to play (a sport or game)', 'tocar - to play (an instrument)', 'correr - to run',
-                     'ver - to watch/see', 'mirar - to watch/see', 'dibujar - to draw', 'nadar - to swim', 'beber - to drink',
-                  'practicar - to practice', 'dormir - to sleep', 'viajar - to travel']
-
-    random_spanish_word = (random.choice(Spanish_words))
-
-    return render_template('index.html', random_spanish_word=random_spanish_word)
+@app.route('/projects')
+def projects():
+    return redirect('/static/Ryan_Viglione_Software_And_Automation_Projects_2023.pdf')
 
 @app.route('/timeline')
 def timeline():
     title_timeline = "Timeline of my life!"
     return render_template("timeline.html", title=title_timeline)
 
-#Deprecated pages below
-'''
-@app.route('/about')
-def about():
-    title = "Links to Ryan's other websites"
-    return render_template("about.html", title=title)
-
-@app.route('/downloadable_files')
-def downloadable_files():
-    title_download = "Exe files and word unscramble game"
-    return render_template("downloadable_files.html", title= title_download)
-
-@app.route('/contact')
-def contact():
-    title_two = 'Contact/Contacto'
-    return render_template('contact.html', title=title_two)
-'''
 @app.route('/PowerShell_Projects')
 def PowerShell_Projects():
     PowerShell_Projects_Title = 'PowerShell Projects'
     return render_template('PowerShell_Projects.html', PowerShell_Projects_Title=PowerShell_Projects_Title)
+
 @app.route('/EliteShell')
 def EliteShell():
     EliteShell_Title = 'EliteShell'
     return render_template('EliteShell.html', EliteShell_Title=EliteShell_Title)
+
 @app.route('/EliteShell_README')
 def EliteShell_README():
     EliteShell_README_Title = 'EliteShell - README'
@@ -55,7 +35,7 @@ def EliteShell_README():
 @app.route('/EliteShell_News')
 def EliteShell_News():
     EliteShell_News_Title = 'EliteShell - News'
-    return render_template('EliteShell_News.html', EliteShell_News_Title=EliteShell_News_Title)
+    return render_template('EliteShell-News.html', EliteShell_News_Title=EliteShell_News_Title)
 
 @app.route('/EliteShell_Pictures')
 def EliteShell_Pictures():
@@ -72,7 +52,7 @@ def practice_Spanish():
     title_four = 'Practice Spanish here'
     return render_template('practice_Spanish.html', title=title_four)
 
-#MadLibs functionality and logic
+#MadLibs funcationality and logic
 @app.route('/greet')
 def greet_person():
     player = request.args.get("person")
@@ -85,14 +65,14 @@ def greet_person():
 
     return render_template("cumplido.html", person=player, compliment=compliment)
 
-#End MadLibs functionality and logic
+# End MadLibs functionality and logic
 
 @app.route('/diccionario')
 def diccionario():
     title_dropdown_6 = 'Diccionario (English to Spanish)'
     return render_template("diccionario.html", title= title_dropdown_6)
 
-#Dropdowns
+# Dropdowns
 @app.route('/adjetivos')
 def adjetivos():
     title_dropdown_1 = 'Adjetivos/adjectives'
@@ -125,7 +105,7 @@ def llenar_los_espacios():
 global answers
 answers = []
 
-@app.route('/form_dos', methods = ["POST", "GET"])
+@app.route('/form_dos', methods=["POST", "GET"])
 def form_dos():
 
     one = request.form.get("one")
@@ -209,4 +189,4 @@ def form_cuatro():
         return render_template('form_cuatro.html', verb_answers_dos=verb_answers_dos)
 
 if __name__ == "__main__":
-    app.run(debug=True, port=80)
+    app.run(debug=False, port=80)

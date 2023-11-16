@@ -19,7 +19,8 @@ body {
     padding: 10px;
     overflow-y: auto;
     height: calc(100% - 40px);
-    color: green;
+    color: yellow;
+    font-size: 20px;
 }
 
 .terminal-input {

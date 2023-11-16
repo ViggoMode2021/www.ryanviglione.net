@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <title>Ryan Viglione CLI</title>
+</head>
+<body>
+    <div class="terminal-window">
+        <div class="terminal-output" id="terminalOutput"></div>
+        <div class="terminal-input">
+            <span>&gt;</span>
+            <input type="text" id="terminalInput" autofocus />
+
+            type help to see commands
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/terminal.js') }}"></script>
+</body>
+</html>
